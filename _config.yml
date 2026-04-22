@@ -1,6 +1,6 @@
-title: Moonwalk Template
-author: Zohan Subhash
-url: https://web.zohan.tech/moonwalk-template-test # root address of the site
+title: Slop Report
+author: 7562Infosec
+url: "https://slopreport.net" # root address of the site
 description: Template for generating a Jekyll website based on the Moonwalk (@abhinavs/moonwalk) theme
 permalink: /:slug
 
@@ -10,7 +10,7 @@ favicon: "./logo.png" # relative path to site's favicon
 theme: moonwalk # if you are using GitHub Pages, change it to # remote_theme: abhinavs/moonwalk
 
 theme_config:
-  appearance: "dark" # can be "light", "dark" or "auto"
+  appearance: "auto" # can be "light", "dark" or "auto"
   appearance_toggle: true # if appearance can be switched by user
   back_home_text: "home.." # customize text for homepage link in post layout
   date_format: "%Y-%m-%d" # customize how date is formatted
@@ -40,5 +40,8 @@ twitter:
   
 plugins:
   - jekyll-soopr-seo-tag
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-feed
 
 destination: docs/
