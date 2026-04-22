@@ -1,0 +1,75 @@
+name: Daily Slop Report Scrape
+
+on:
+  schedule:
+    # Run at 08:00 UTC every day
+    - cron: "0 8 * * *"
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Required to commit and push the new post
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so git push works correctly
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('scripts/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run scraper
+        run: python3 scripts/scrape.py
+
+      - name: Check for new post
+        id: check_changes
+        run: |
+          git status --porcelain _posts/
+          if git diff --quiet HEAD -- _posts/; then
+            echo "no_new_post=true" >> "$GITHUB_OUTPUT"
+            echo "No new post generated today (no changes in _posts/)."
+          else
+            echo "no_new_post=false" >> "$GITHUB_OUTPUT"
+            echo "New post detected:"
+            git status --short _posts/
+          fi
+
+      - name: Commit and push new post
+        if: steps.check_changes.outputs.no_new_post == 'false'
+        run: |
+          git config user.name "Slop Report Bot"
+          git config user.email "claudeai@secnetmx.com"
+          git add _posts/
+          git commit -m "chore: add daily slop report $(date -u +%Y-%m-%d)"
+          git push origin HEAD
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.check_changes.outputs.no_new_post }}" = "true" ]; then
+            echo "### No new post today" >> "$GITHUB_STEP_SUMMARY"
+            echo "The scraper ran but found no qualifying stories to publish." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### New post published" >> "$GITHUB_STEP_SUMMARY"
+            echo "A new daily report was committed and pushed to main." >> "$GITHUB_STEP_SUMMARY"
+            echo "GitHub Pages will deploy it automatically." >> "$GITHUB_STEP_SUMMARY"
+          fi
