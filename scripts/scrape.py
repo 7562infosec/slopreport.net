@@ -125,7 +125,7 @@ HACKER_NEWS_SOURCE = {
 # How many hours back to look for stories
 LOOKBACK_HOURS = 36
 # Target number of stories for the post
-MAX_STORIES = 15
+MAX_STORIES = 25
 MIN_STORIES = 3
 # Request timeout in seconds
 REQUEST_TIMEOUT = 15
