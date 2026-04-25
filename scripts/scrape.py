@@ -24,7 +24,7 @@ from dateutil import parser as dateutil_parser
 
 KEYWORDS = [
     # Core AI slop terms
-    "ai slop", "ai-slop", "slop",
+    "ai slop", "ai-slop",
 
     # AI-generated content quality issues
     "content farm", "content mill", "made for advertising", "mfa site",
@@ -166,7 +166,15 @@ def strip_html(text: str) -> str:
 
 def matches_keywords(text: str) -> bool:
     lower = text.lower()
-    return any(kw in lower for kw in KEYWORDS)
+    for kw in KEYWORDS:
+        # Use word-boundary match for short single-word terms to avoid substrings
+        if " " in kw or "-" in kw:
+            if kw in lower:
+                return True
+        else:
+            if re.search(r'\b' + re.escape(kw) + r'\b', lower):
+                return True
+    return False
 
 
 def parse_date(entry) -> datetime | None:
