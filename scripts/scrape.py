@@ -360,10 +360,6 @@ def write_post(content: str, today: datetime) -> Path:
     POSTS_DIR.mkdir(exist_ok=True)
     filename = today.strftime("%Y-%m-%d") + "-slop-report.md"
     post_path = POSTS_DIR / filename
-    # Don't overwrite if already written today
-    if post_path.exists():
-        log.info(f"Post already exists at {post_path}, skipping write.")
-        return post_path
     with open(post_path, "w", encoding="utf-8") as f:
         f.write(content)
     return post_path
