@@ -3,68 +3,152 @@ layout: post
 title: "The Slop Report — April 25, 2026"
 date: 2026-04-25
 categories: daily-roundup
-tags: [ai-slop, content-farms, generative-ai, youtube, deepfakes, seo-spam, eu-ai-act, meta]
-description: "YouTube nukes 16 slop channels overnight, Google fires fastest-ever spam update, EU content labeling deadline looms, Meta fires its human moderators, and deepfake law explodes globally."
 ---
 
-*Your daily digest of AI-generated content flooding the internet. All signal, no slop.*
-
----
-
-## 🔴 YouTube Quietly Deleted 16 AI Slop Channels — 4.7 Billion Views Gone Overnight
-
-In what is being called the platform's most aggressive anti-slop enforcement action to date, YouTube deleted 16 major AI-generated content channels in a single sweep, erasing **4.7 billion views**, **35 million subscribers**, and an estimated **$117 million in annual revenue** across the ecosystem. The deletions came after a New York Times investigation documented how YouTube's own algorithm was actively promoting AI-generated content to toddlers and preschoolers — including videos of a baby eating honey (infant botulism risk), swallowing whole grapes (choking hazard), and a child being chased by a T-Rex.
-
-The coalition of 200+ organizations that sent an open letter to YouTube CEO Neal Mohan in early April — led by Fairplay and including the American Federation of Teachers and the American Counseling Association — is still waiting for a formal policy response. YouTube has not publicly committed to banning AI-generated content from YouTube Kids. Researchers estimate that AI slop channels collectively hold over 63 billion views and 221 million subscribers across the platform.
-
-**Sources:** [Futurism](https://futurism.com/artificial-intelligence/youtube-ai-slop-for-children) · [Fortune](https://fortune.com/2026/04/01/ai-slop-200-organizations-letter-youtube-google/) · [Tubefilter](https://www.tubefilter.com/2026/04/01/youtube-fairplay-kids-ai-open-letter/) · [The 74](https://www.the74million.org/zero2eight/ai-slop-is-flooding-childrens-media-parents-should-be-very-alarmed/)
+*Your daily digest of AI-generated content news from around the web. All signal, no slop.*
 
 ---
 
-## ⚡ Google Fires Fastest-Ever Spam Update — Targets AI Affiliate Farms
+### 1. [Most people can’t tell when a personal text message is written by AI. Here’s why it matters](https://www.fastcompany.com/91529584/ai-written-text-messages-research-study?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+*Fast Company Tech* · Apr 25
 
-Google completed what Search Engine Land is calling the fastest spam update in history on **March 24**, wrapping the full rollout in under 24 hours. A second update followed, completing on **April 8** after 12 days of rollout, specifically targeting AI-generated affiliate and review sites that had cracked Google's EEAT (Experience, Expertise, Authoritativeness, Trustworthiness) signals using agentic LLMs that mimic human tone and fabricate credentials.
-
-The context: a University of Leipzig / Bauhaus-Universität Weimar longitudinal study found that approximately **90% of top-ranked search result pages** now contain AI-generated content, and Gartner's predicted 25% drop in traditional search volume has materialized as users lose confidence in results. Google VP of Search Liz Reid acknowledged the challenge in a recent interview with Search Engine Land, conceding that the arms race between spam filters and AI content farms is ongoing.
-
-**Sources:** [Search Engine Land – Google Liz Reid interview](https://searchengineland.com/google-liz-reid-ai-search-query-shifts-ai-slop-475324) · [Search Engine Land – spam experiment](https://searchengineland.com/google-spam-update-ai-affiliate-sites-seo-experiment-470168) · [eMarketer](https://www.emarketer.com/content/google-search-share-dips-seo-spam-floods-results)
-
----
-
-## 🇪🇺 EU AI Act Content Labeling: T-Minus 99 Days
-
-The EU AI Act's **Article 50 transparency obligations** take effect on **August 2, 2026** — now fewer than 100 days away. From that date, providers of generative AI systems must ensure AI-generated content is machine-detectable, and any AI-generated text published to inform the public on matters of public interest must be **clearly and visibly labelled** for end users. Deepfakes require explicit disclosure under all circumstances.
-
-The European Commission is finalizing a **Code of Practice** to establish shared industry standards for marking and labelling, expected to be published in May–June 2026. Enforcement is split between the European AI Office and member-state authorities, with fines reaching up to **6% of global annual revenue** for non-compliance.
-
-For context on scale: industry estimates put AI-generated content at **74% of all newly created webpages** and **64% of all newly published internet material** as of early 2026. The labeling mandate will apply to platforms, publishers, and AI providers operating anywhere in the EU — regardless of where the company is headquartered.
-
-**Sources:** [EU Digital Strategy – Code of Practice](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) · [Herbert Smith Freehills Kramer](https://www.hsfkramer.com/notes/ip/2026-03/transparency-obligations-for-ai-generated-content-under-the-eu-ai-act-from-principle-to-practice) · [Kennedy's Law](https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-s-draft-code-of-practice-on-marking-and-labelling-of-ai-generated-content-what-providers-and-deployers-need-to-know/)
+Two new experiments show that most people do not even consider that a personal message could be AI
+-generated, even when they themselves use artificial intelligence to write. To see how people judge
+someone based on their writing in the age of ChatGPT , my colleague Jiaqi Zhu and I recruited more
+than 1,300 U.S.-based participants, ages 18 to 84, and showed them AI-generated messages like an
+apology sent in an email. We split our volunteers into four groups: Some people saw the messages
+with no
 
 ---
 
-## 🤖 Meta Fires Its Human Moderators — Replaces Them With AI
+### 2. [Three Years Ago Today, “Avengers” Director Joe Russo Predicted There Would Be a Fully AI-Generated Movie Within Two Years](https://futurism.com/artificial-intelligence/russo-predicted-ai-movie-two-years)
+*Futurism* · Apr 24
 
-Meta completed a significant shift in its content enforcement architecture in March 2026, rolling out AI systems across Facebook, Instagram, and Threads as it reduces reliance on third-party human moderation vendors. The company claims the AI outperforms humans in early tests: it detects **twice as much violating content**, cuts enforcement errors by **more than 60%**, identifies and mitigates **5,000 scam attempts per day**, and has reduced celebrity impersonation reports by **over 80%**. Enforcement now covers languages spoken by 98% of people online, up from roughly 80 languages.
-
-Critics are skeptical. The Register noted that Meta's moderation track record has been poor enough that even a large percentage improvement may not be sufficient for the scale of the problem. In April, Meta faced renewed scrutiny when advocates alleged the platform's AI moderation was failing to catch antisemitic content — including Holocaust denial — prompting Meta leadership to highlight AI's use in "integrity work" and its ability to understand coded language.
-
-The deeper irony: Meta is now using AI to police AI-generated content on a platform increasingly flooded with it.
-
-**Sources:** [TechCrunch](https://techcrunch.com/2026/03/19/meta-rolls-out-new-ai-content-enforcement-systems-while-reducing-reliance-on-third-party-vendors/) · [The Register](https://www.theregister.com/2026/03/20/meta_ai_content_moderation) · [CNBC](https://www.cnbc.com/2026/03/19/meta-cut-back-third-party-vendors-favor-of-ai-for-content-enforcement.html)
+How'd that work out? The post Three Years Ago Today, &#8220;Avengers&#8221; Director Joe Russo
+Predicted There Would Be a Fully AI-Generated Movie Within Two Years appeared first on Futurism .
 
 ---
 
-## ⚖️ Deepfake Laws Explode: 46 States, Two Federal Bills, One Chaotic Patchwork
+### 3. [ComfyUI hits $500M valuation as creators seek more control over AI-generated media](https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/)
+*TechCrunch AI* · Apr 24
 
-The U.S. deepfake legal landscape hit a milestone this spring: **46 states** now have legislation directly targeting AI-generated synthetic media, up from a handful two years ago. The laws vary wildly — some impose criminal penalties for creating non-consensual intimate deepfakes, others create civil causes of action, many mandate disclosure of AI-generated political content.
-
-At the federal level, two major bills are moving. The **TAKE IT DOWN Act** — targeting non-consensual intimate deepfakes — requires platforms to remove flagged content within **48 hours** of a complaint. The **NO FAKES Act of 2026** takes a broader approach, establishing that individuals retain rights over their image, voice, and likeness in AI-generated content. Senator Warner also sent letters to major tech companies demanding action on "maliciously manipulated media."
-
-Internationally, India's **IT Rules 2026** require platforms providing AI generation tools to deploy "reasonable technical measures" blocking unlawful synthetic content before publication — applying equally to startups and large platforms. Meanwhile, X (Twitter) announced a 90-day suspension from its revenue-sharing program for creators posting AI-generated war videos without disclosure — but AFP's fact-checkers note the policy has had minimal effect since most offenders aren't in the revenue program to begin with.
-
-**Sources:** [Agility PR](https://www.agilitypr.com/pr-news/pr-tech-ai/ai-deepfakes-in-2026-worldwide-legal-actions-and-crackdowns/) · [Jones Walker](https://www.joneswalker.com/en/insights/blogs/ai-law-blog/deepfakes-as-a-service-meets-state-laws-governing-synthetic-media-in-a-fragmente.html) · [AI Certs – India](https://www.aicerts.ai/news/it-rules-2026-indias-rapid-deepfake-crackdown/) · [Senator Warner](https://www.warner.senate.gov/public/index.cfm/2026/3/warner-pushes-tech-companies-to-take-action-against-deepfakes-maliciously-manipulated-media)
+ComfyUI, whose tools give creators more control over AI image, video, and audio generation, just
+raised $30 million.
 
 ---
 
-*The Slop Report publishes daily. Sources are verified human journalists and researchers — we don't use AI slop to cover AI slop.*
+### 4. [Chinese Netflix Competitor Opens Floodgates to AI Slop](https://futurism.com/artificial-intelligence/chinese-netflix-competitor-ai-slop)
+*Futurism* · Apr 24
+
+Sorry, C-drama fans. The post Chinese Netflix Competitor Opens Floodgates to AI Slop appeared first
+on Futurism .
+
+---
+
+### 5. [South Korea Police Arrest Man For Posting AI Photo of Runaway Wolf](https://yro.slashdot.org/story/26/04/24/195210/south-korea-police-arrest-man-for-posting-ai-photo-of-runaway-wolf?utm_source=rss1.0mainlinkanon&utm_medium=feed)
+*Slashdot* · Apr 24
+
+South Korean police arrested a man accused of spreading an AI-generated image of an escaped wolf,
+after the fake photo reportedly misled authorities and disrupted the real search operation. The BBC
+reports: South Korean police have arrested a man for sharing an AI-generated image that misled
+authorities who were searching for a wolf that had broken out of a zoo in Daejeon city. The 40-year-
+old unnamed man is accused of disrupting the search by creating and distributing a fake photo
+purporting to
+
+---
+
+### 6. [Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)](https://github.com/nex-crm/wuphf)
+*Hacker News* · Apr 25
+
+95 points on Hacker News
+
+---
+
+### 7. [The Download: supercharged scams and studying AI healthcare](https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/)
+*MIT Technology Review* · Apr 24
+
+This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of
+what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT
+was released in late 2022, it showed how easily generative AI could create human-like text. This
+quickly caught the eye of&#8230;
+
+---
+
+### 8. [Steve Ballmer blasts founder he backed who pleaded guilty to fraud: ‘I was duped and feel silly’](https://techcrunch.com/2026/04/24/steve-ballmer-blasts-founder-he-backed-who-pleaded-guilty-to-fraud-i-was-duped-and-feel-silly/)
+*TechCrunch* · Apr 24
+
+Steve Ballmer wrote a fiery letter in the sentencing of disgraced founder Joseph Sanberg documenting
+all the harm that's befalling him as an investor.
+
+---
+
+### 9. [DeepSeek's new models are so efficient they'll run on a toaster ... by which we mean Huawei's NPUs](https://go.theregister.com/feed/www.theregister.com/2026/04/24/deepseek_v4/)
+*The Register* · Apr 24
+
+Now available in preview, DeepSeek V4 cuts inference costs to a fraction of R1 Chinese AI darling
+DeepSeek is back with a new open weights large language model that promises performance to rival the
+best proprietary American LLMs. Perhaps more importantly, it claims to dramatically reduce inference
+costs and it extends support for Huawei's Ascend family of AI accelerators.…
+
+---
+
+### 10. [DeepSeeek V4 is out, touting some disruptive wins over Gemini, ChatGPT, and Claude](https://www.digitaltrends.com/computing/deepseeek-v4-is-out-touting-some-disruptive-wins-over-gemini-chatgpt-and-claude/)
+*Digital Trends* · Apr 24
+
+DeepSeek V4-Pro scores 3,206 on Codeforces, ahead of GPT-5.4 and Gemini, while costing $3.48 per
+million tokens versus Claude's $25, making it one of the most price-competitive frontier-class AI
+releases in 2026.
+
+---
+
+### 11. [Show HN: Browser Harness – Gives LLM freedom to complete any browser task](https://github.com/browser-use/browser-harness)
+*Hacker News* · Apr 24
+
+107 points on Hacker News
+
+---
+
+### 12. [More ancient Linux device support faces the chop](https://go.theregister.com/feed/www.theregister.com/2026/04/24/ancient_linux_drivers_going/)
+*The Register* · Apr 24
+
+One way to deal with bug hunting LLMs: ditch the old drivers One tactic to deal with LLM-powered
+vulnerability detection is simple – just speed up the removal of old code. If it's gone, it no
+longer matters if it's buggy.…
+
+---
+
+### 13. [Claude Is Connecting Directly To Your Personal Apps](https://tech.slashdot.org/story/26/04/24/066231/claude-is-connecting-directly-to-your-personal-apps?utm_source=rss1.0mainlinkanon&utm_medium=feed)
+*Slashdot* · Apr 24
+
+Anthropic is expanding Claude's app integrations beyond work tools, adding personal-service
+connectors like Spotify, Uber, AllTrails, TripAdvisor, Instacart, and TurboTax. The Verge reports:
+Some of these apps, such as Spotify, already have similar connectors in OpenAI's ChatGPT. Once an
+app is connected, Claude will suggest relevant connected apps directly in your conversations, like
+using AllTrails for hike recommendations. Anthropic notes in its blog post announcing the new
+connectors that, "
+
+---
+
+### 14. [LLMs don’t get mental health right. We need a two-pronged approach to fix them](https://www.fastcompany.com/91527462/llms-dont-get-mental-health-right-we-need-a-two-pronged-approach-to-fix-them-ai-suicide-self-harm?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+*Fast Company Tech* · Apr 24
+
+Note: This article discusses sensitive topics like suicide and self-harm. If you or someone you know
+is in danger, please call the national suicide and crisis lifeline at 988. LLM-powered chatbots have
+brought humans and technology closer together than ever before–but at what cost? Many people have
+begun turning to LLMs for advice, seeking guidance on anything from fitness plans to interpersonal
+relationships. But for society’s most vulnerable minds (e.g., adolescents, the elderly, and those
+wit
+
+---
+
+### 15. [Prestigious photo contest answers ‘what is a photo?’](https://www.theverge.com/gadgets/918016/prestigious-photo-contest-answers-what-is-a-photo)
+*The Verge AI* · Apr 24
+
+We love to muse over how "real" photography is defined here at The Verge now that generative AI is
+so prolific, and the World Press Photo competition might have the answer. The prestigious award
+celebrates the best of photojournalism, where capturing reality is paramount. The winning entry for
+2026 - "Separated by ICE," captured by [&#8230;]
+
+---
+
+*15 stories sourced from Digital Trends, Fast Company Tech, Futurism, Hacker News, MIT Technology Review, Slashdot, TechCrunch, TechCrunch AI, The Register, The Verge AI. The Slop Report is published daily. [Subscribe via RSS](/feed.xml).*
