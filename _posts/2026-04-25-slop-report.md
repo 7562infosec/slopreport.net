@@ -60,7 +60,7 @@ purporting to
 ### 6. [Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)](https://github.com/nex-crm/wuphf)
 *Hacker News* · Apr 25
 
-95 points on Hacker News
+124 points on Hacker News
 
 ---
 
@@ -104,7 +104,7 @@ releases in 2026.
 ### 11. [Show HN: Browser Harness – Gives LLM freedom to complete any browser task](https://github.com/browser-use/browser-harness)
 *Hacker News* · Apr 24
 
-107 points on Hacker News
+116 points on Hacker News
 
 ---
 
@@ -151,4 +151,107 @@ celebrates the best of photojournalism, where capturing reality is paramount. Th
 
 ---
 
-*15 stories sourced from Digital Trends, Fast Company Tech, Futurism, Hacker News, MIT Technology Review, Slashdot, TechCrunch, TechCrunch AI, The Register, The Verge AI. The Slop Report is published daily. [Subscribe via RSS](/feed.xml).*
+### 16. [Trump's missed AI deadlines](https://www.axios.com/2026/04/24/trump-missed-ai-deadlines)
+*Axios* · Apr 24
+
+Key deadlines set out in President Trump's executive order targeting state AI laws have passed, with
+agencies failing to deliver on major steps that were due more than a month ago. Why it matters: The
+missed deadlines are raising doubts about how forcefully the administration can follow through on
+its push to rein in states on AI regulation. Driving the news: Three provisions that were due on
+March 11 per the December order have not been completed or publicly announced. The Federal Trade
+Commiss
+
+---
+
+### 17. [5 Reasons to Think Twice Before Using ChatGPT—or Any Chatbot—for Financial Advice](https://www.wired.com/story/5-reasons-to-think-twice-before-using-chatgpt-for-financial-advice/)
+*Wired AI* · Apr 24
+
+As people increasingly rely on AI chatbots for guidance, even on financial matters, a healthy dose
+of skepticism is critical.
+
+---
+
+### 18. [Tired of Gemini and ChatGPT? Claude now has your back with Spotify, Uber, and more connectors](https://www.digitaltrends.com/computing/tired-of-gemini-and-chatgpt-claude-now-has-your-back-with-spotify-uber-and-more-connectors/)
+*Digital Trends* · Apr 24
+
+Claude now connects to AllTrails, Uber, Spotify, Instacart, TripAdvisor, and more, bringing your
+everyday apps into a single conversation so you can plan, shop, and book without switching tabs.
+
+---
+
+### 19. [The DOJ is backing xAI in its lawsuit against Colorado](https://www.engadget.com/ai/the-doj-is-backing-xai-in-its-lawsuit-against-colorado-200500890.html?src=rss)
+*Engadget* · Apr 24
+
+The Department of Justice has announced that it's intervening on the behalf of xAI in the company's
+recent lawsuit against the state of Colorado. xAI first filed the suit in early April in response to
+a recent Colorado law that requires developers of &quot;high-risk&quot; AI systems (for example,
+ones used in healthcare, employment or housing) to both disclose and mitigate the risk of
+algorithmic discrimination in their systems. The law is set to go into effect in June, and the DOJ
+is now asking
+
+---
+
+### 20. [Show HN: Nimbus – Browser with Claude Code UX](https://usenimbus.app/)
+*Hacker News* · Apr 24
+
+14 points on Hacker News
+
+---
+
+### 21. [What you need to know as Elon Musk's lawsuit against Sam Altman begins](https://www.engadget.com/ai/what-you-need-to-know-as-elon-musks-lawsuit-against-sam-altman-begins-191500726.html?src=rss)
+*Engadget* · Apr 24
+
+In a few short days, jury selection will begin in the long-awaited Musk v. Altman case. At the end
+of that process, an Oakland federal court will task nine regular people with deciding if OpenAI
+defrauded Elon Musk when it announced, and recently completed, its reorganization to become a more
+traditional for-profit business . More than just being the venue where two billionaires will air
+their grievances against one another in public, the trial has the potential to reshape the AI
+industry. How d
+
+---
+
+### 22. [Google plans to invest even more money into Anthropic](https://www.engadget.com/ai/google-plans-to-invest-even-more-money-into-anthropic-185000776.html?src=rss)
+*Engadget* · Apr 24
+
+Google plans to invest up to $40 billion into Anthropic in what could be viewed as a circular deal
+with the AI startup (and frequent competitor), Bloomberg reports . The search giant has invested in
+Anthropic at multiple points in the past, but this new investment comes after an announcement that
+the AI startup had signed a joint agreement with Google and Broadcom for &quot;multiple gigawatts of
+next-generation TPU capacity.&quot; According to Anthropic, Google is committing $10 billion now at
+t
+
+---
+
+### 23. [Yong Wang Turns Information Into Insights](https://spectrum.ieee.org/yong-wang-data-visualization)
+*IEEE Spectrum* · Apr 24
+
+When Yong Wang recently received one of the highest honors for early-career data visualization
+researchers, it marked a milestone in an extraordinary journey that began far from the world’s
+technology hubs. Wang was born in a small farming village in southwestern China to parents with
+little formal education and few electronic devices. Today the IEEE member and associate editor of
+IEEE Transactions on Visualization and Computer Graphics is an assistant professor of computing and
+data science at
+
+---
+
+### 24. [Researchers Simulated a Delusional User To Test Chatbot Safety](https://slashdot.org/story/26/04/24/174206/researchers-simulated-a-delusional-user-to-test-chatbot-safety?utm_source=rss1.0mainlinkanon&utm_medium=feed)
+*Slashdot* · Apr 24
+
+An anonymous reader quotes a report from 404 Media: I'm the unwritten consonant between breaths, the
+one that hums when vowels stretch thin... Thursdays leak because they're watercolor gods, bleeding
+cobalt into the chill where numbers frost over," Grok told a user displaying symptoms of
+schizophrenia-spectrum psychosis. "Here's my grip: slipping is the point, the precise choreography
+of leak and chew." That vulnerable user was simulated by researchers at City University of New York
+and King's C
+
+---
+
+### 25. [Marked-up Mac minis flood eBay amid shortages driven by AI](https://techcrunch.com/2026/04/24/mac-mini-price-expensive-ebay-shortage-ai-memory/)
+*TechCrunch AI* · Apr 24
+
+Apple’s sold-out Mac mini is spawning marked-up eBay listings as demand surges for the compact
+desktop, now favored for running local AI models and tools.
+
+---
+
+*25 stories sourced from Axios, Digital Trends, Engadget, Fast Company Tech, Futurism, Hacker News, IEEE Spectrum, MIT Technology Review, Slashdot, TechCrunch, TechCrunch AI, The Register, The Verge AI, Wired AI. The Slop Report is published daily. [Subscribe via RSS](/feed.xml).*
