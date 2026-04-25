@@ -25,44 +25,51 @@ from dateutil import parser as dateutil_parser
 KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop", "slop",
-    # AI-generated content
-    "ai-generated", "ai generated", "ai content", "ai writing", "ai text",
-    "machine-generated", "synthetic content", "synthetic media", "synthetic video",
-    "automated content", "automated journalism", "robo-journalism",
-    # Content quality / spam
+
+    # AI-generated content quality issues
     "content farm", "content mill", "made for advertising", "mfa site",
     "clickbait farm", "ai spam", "ai garbage", "low quality content",
-    "junk content", "fake content", "fake news", "misinformation",
-    "disinformation", "information pollution",
-    # Platforms and products
-    "chatgpt", "gpt-4", "gpt-5", "claude", "gemini", "llama", "mistral",
-    "sora", "midjourney", "dall-e", "stable diffusion", "runway",
-    # Model/tech categories
-    "llm", "large language model", "generative ai", "foundation model",
-    "artificial intelligence content", "ai model",
-    # Deepfakes and identity
+    "junk content", "fake content",
+
+    # Automated / synthetic content
+    "automated journalism", "robo-journalism",
+    "machine-generated content", "synthetic content", "synthetic media",
+    "ai-generated content", "artificially generated",
+
+    # Deepfakes and identity fraud
     "deepfake", "deep fake", "voice clone", "voice cloning",
-    "identity fraud", "synthetic identity", "face swap",
-    "ai fake", "ai impersonation", "non-consensual",
-    # Search and SEO
+    "synthetic identity", "face swap", "ai impersonation",
+    "non-consensual deepfake", "non-consensual synthetic",
+    "ai nude", "ai porn",
+
+    # Search / SEO spam
     "seo spam", "ai seo", "search spam", "search manipulation",
-    "google update", "search quality", "search ranking",
-    # Platform moderation
-    "content moderation", "trust and safety", "platform policy",
-    "ai detection", "ai watermark", "content authenticity",
-    "provenance", "c2pa",
-    # Regulation and policy
-    "eu ai act", "ai regulation", "ai policy", "ai law", "ai bill",
-    "ai copyright", "ai ethics", "ai governance",
-    "take it down act", "no fakes act",
-    # Publishing / journalism
-    "ai journalism", "ai newsroom", "ai reporter", "ai byline",
-    "ai publisher", "news bot",
-    # Social / advertising
+    "google spam update", "helpful content update",
+
+    # Platform responses to AI content
+    "ai detection", "ai watermark", "content authenticity", "c2pa",
+    "content provenance", "ai-generated label", "ai disclosure",
+
+    # Specific AI misuse legislation
+    "eu ai act", "take it down act", "no fakes act", "ai copyright",
+    "ai liability", "ai fraud",
+
+    # Journalism quality (AI replacing reporters badly)
+    "ai newsroom", "ai byline", "ai publisher", "news bot", "ai reporter",
+    "ai journalism", "ai-written",
+
+    # Ad fraud and bot traffic
     "ad fraud", "programmatic fraud", "bot traffic", "bot account",
-    "social media bot", "llm bot",
-    # Education / kids
-    "youtube kids", "children content", "kids content",
+    "social media bot", "llm bot", "fake engagement",
+
+    # Misinformation — compound terms only (not standalone)
+    "information pollution", "disinformation campaign",
+    "misinformation campaign", "ai misinformation", "ai disinformation",
+    "ai propaganda", "influence operation",
+
+    # Kids / vulnerable audiences
+    "youtube kids", "children's content", "kids content",
+    "made for kids", "child safety",
 ]
 
 RSS_SOURCES = [
@@ -291,14 +298,19 @@ def score_story(story: dict) -> float:
     text = f"{story['title']} {story['summary']}".lower()
     high_value = [
         "ai slop", "ai spam", "content farm", "synthetic content",
-        "ai-generated", "deepfake", "deep fake", "misinformation",
-        "disinformation", "voice clone", "ad fraud", "seo spam",
-        "made for advertising", "content mill", "fake news",
+        "ai-generated content", "deepfake", "deep fake",
+        "ai misinformation", "ai disinformation", "voice clone",
+        "ad fraud", "seo spam", "made for advertising",
+        "content mill", "ai impersonation", "influence operation",
+        "ai watermark", "c2pa", "non-consensual deepfake",
+        "ai byline", "ai newsroom", "information pollution",
     ]
     score += sum(3.0 for kw in high_value if kw in text)
     general = [
-        "llm", "generative ai", "chatgpt", "automated content",
-        "ai moderation", "ai regulation", "ai policy",
+        "content authenticity", "ai detection", "eu ai act",
+        "take it down act", "no fakes act", "ai copyright",
+        "bot traffic", "programmatic fraud", "ai disclosure",
+        "robo-journalism", "automated journalism",
     ]
     score += sum(1.0 for kw in general if kw in text)
     if story["summary"]:
