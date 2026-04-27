@@ -26,15 +26,22 @@ KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content quality issues
+    # AI-generated content — broad but relevant
+    "ai-generated", "ai generated",
+    "generative ai",
+    "synthetic content", "synthetic media", "synthetic video",
+    "machine-generated content",
+    "artificially generated",
+
+    # Content quality / spam
     "content farm", "content mill", "made for advertising", "mfa site",
     "clickbait farm", "ai spam", "ai garbage", "low quality content",
     "junk content", "fake content",
 
-    # Automated / synthetic content
+    # Automated journalism
     "automated journalism", "robo-journalism",
-    "machine-generated content", "synthetic content", "synthetic media",
-    "ai-generated content", "artificially generated",
+    "ai newsroom", "ai byline", "ai publisher", "news bot", "ai reporter",
+    "ai journalism", "ai-written",
 
     # Deepfakes and identity fraud
     "deepfake", "deep fake", "voice clone", "voice cloning",
@@ -46,26 +53,22 @@ KEYWORDS = [
     "seo spam", "ai seo", "search spam", "search manipulation",
     "google spam update", "helpful content update",
 
-    # Platform responses to AI content
+    # Platform responses
     "ai detection", "ai watermark", "content authenticity", "c2pa",
-    "content provenance", "ai-generated label", "ai disclosure",
+    "content provenance", "ai disclosure",
 
-    # Specific AI misuse legislation
-    "eu ai act", "take it down act", "no fakes act", "ai copyright",
-    "ai liability", "ai fraud",
-
-    # Journalism quality (AI replacing reporters badly)
-    "ai newsroom", "ai byline", "ai publisher", "news bot", "ai reporter",
-    "ai journalism", "ai-written",
+    # Misinformation / disinfo (standalone terms, word-boundary matched)
+    "disinformation", "misinformation", "fake news",
+    "information pollution", "influence operation",
+    "ai misinformation", "ai disinformation", "ai propaganda",
 
     # Ad fraud and bot traffic
     "ad fraud", "programmatic fraud", "bot traffic", "bot account",
     "social media bot", "llm bot", "fake engagement",
 
-    # Misinformation — compound terms only (not standalone)
-    "information pollution", "disinformation campaign",
-    "misinformation campaign", "ai misinformation", "ai disinformation",
-    "ai propaganda", "influence operation",
+    # Regulation (specific to AI misuse/safety)
+    "eu ai act", "take it down act", "no fakes act",
+    "ai copyright", "ai liability", "ai fraud",
 
     # Kids / vulnerable audiences
     "youtube kids", "children's content", "kids content",
