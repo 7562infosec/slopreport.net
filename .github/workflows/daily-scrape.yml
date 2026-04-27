@@ -47,7 +47,8 @@ jobs:
         id: check_changes
         run: |
           git status --porcelain _posts/
-          if git diff --quiet HEAD -- _posts/; then
+          git add _posts/
+        if [ -z "$(git status --porcelain _posts/)" ]; then
             echo "no_new_post=true" >> "$GITHUB_OUTPUT"
             echo "No new post generated today (no changes in _posts/)."
           else
