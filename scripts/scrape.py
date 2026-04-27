@@ -5,6 +5,7 @@ Fetches AI slop news from 30+ sources, filters by keyword, and generates a Jekyl
 Usage: python3 scripts/scrape.py
 """
 
+import json
 import os
 import sys
 import re
@@ -14,8 +15,10 @@ import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import anthropic
 import feedparser
 import requests
+from bs4 import BeautifulSoup
 from dateutil import parser as dateutil_parser
 
 # ---------------------------------------------------------------------------
@@ -76,12 +79,10 @@ KEYWORDS = [
 ]
 
 RSS_SOURCES = [
-    # --- Core AI / Tech News ---
-    {"name": "The Verge AI",       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"},
-    {"name": "The Verge Tech",     "url": "https://www.theverge.com/rss/index.xml"},
-    {"name": "Ars Technica",       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab"},
-    {"name": "Wired AI",           "url": "https://www.wired.com/feed/tag/ai/latest/rss"},
-    {"name": "Wired",              "url": "https://www.wired.com/feed/rss"},
+    # --- AI / Tech Beat ---
+    {"name": "Wired AI",           "url": "https://www.wired.com/feed/category/artificial-intelligence/latest/rss"},
+    {"name": "Ars Technica",       "url": "https://feeds.arstechnica.com/arstechnica/index"},
+    {"name": "Slashdot",           "url": "https://rss.slashdot.org/Slashdot/slashdotMain"},
     {"name": "MIT Technology Review","url": "https://www.technologyreview.com/feed/"},
     {"name": "VentureBeat AI",     "url": "https://venturebeat.com/category/ai/feed/"},
     {"name": "TechCrunch AI",      "url": "https://techcrunch.com/category/artificial-intelligence/feed/"},
@@ -100,49 +101,43 @@ RSS_SOURCES = [
     {"name": "BBC Technology",     "url": "https://feeds.bbci.co.uk/news/technology/rss.xml"},
     {"name": "NPR Technology",     "url": "https://feeds.npr.org/1019/rss.xml"},
     {"name": "Fast Company Tech",  "url": "https://www.fastcompany.com/technology/rss"},
-    {"name": "Forbes AI",          "url": "https://www.forbes.com/innovation/ai/feed2/"},
-    {"name": "Axios",              "url": "https://api.axios.com/feed/top"},
+    {"name": "Axios",              "url": "https://api.axios.com/feed/"},
+    # --- Policy / Research ---
+    {"name": "Lawfare",            "url": "https://www.lawfaremedia.org/feed"},
+    {"name": "Brookings Tech",     "url": "https://www.brookings.edu/topic/technology-innovation/feed/"},
+    {"name": "EFF Deeplinks",      "url": "https://www.eff.org/rss/updates.xml"},
+    {"name": "Access Now",         "url": "https://www.accessnow.org/feed/"},
+    # --- SEO / Marketing Trades ---
+    {"name": "Search Engine Journal","url": "https://www.searchenginejournal.com/feed/"},
+    {"name": "Search Engine Land", "url": "https://searchengineland.com/feed"},
+    {"name": "MarTech",            "url": "https://martech.org/feed/"},
     # --- Media / Journalism ---
     {"name": "Nieman Lab",         "url": "https://www.niemanlab.org/feed/"},
+    {"name": "Columbia Journalism Review","url": "https://www.cjr.org/feed"},
     {"name": "Poynter",            "url": "https://www.poynter.org/feed/"},
-    {"name": "Columbia Journalism Review", "url": "https://www.cjr.org/feed/"},
-    {"name": "Reuters Institute",  "url": "https://reutersinstitute.politics.ox.ac.uk/rss.xml"},
-    # --- Advertising / Marketing ---
-    {"name": "Adweek",             "url": "https://www.adweek.com/feed/"},
-    {"name": "Digiday",            "url": "https://digiday.com/feed/"},
-    {"name": "Search Engine Land", "url": "https://searchengineland.com/feed"},
-    {"name": "Search Engine Journal","url": "https://www.searchenginejournal.com/feed/"},
-    # --- Security (for deepfake / fraud / misuse angle) ---
-    {"name": "Krebs on Security",  "url": "https://krebsonsecurity.com/feed/"},
-    {"name": "Dark Reading",       "url": "https://www.darkreading.com/rss.xml"},
-    # --- Science / Research ---
-    {"name": "IEEE Spectrum",      "url": "https://spectrum.ieee.org/feeds/feed.rss"},
-    {"name": "Science Daily AI",   "url": "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml"},
-    # --- Slashdot (broad tech community) ---
-    {"name": "Slashdot",           "url": "http://rss.slashdot.org/Slashdot/slashdotMain"},
+    # --- Disinformation / Platform Safety ---
+    {"name": "First Draft",        "url": "https://firstdraftnews.org/feed/"},
+    {"name": "Bellingcat",         "url": "https://www.bellingcat.com/feed/"},
+    {"name": "Stanford Internet Observatory","url": "https://cyber.fsi.stanford.edu/io/rss.xml"},
 ]
 
 HACKER_NEWS_SOURCE = {
     "name": "Hacker News",
-    "api_url": "https://hn.algolia.com/api/v1/search_by_date",
+    "api_url": "https://hn.algolia.com/api/v1/search",
     "queries": [
-        "AI slop", "generative AI content", "LLM content farm",
-        "AI spam", "deepfake", "AI moderation", "AI copyright",
-        "synthetic content", "AI regulation",
+        "ai slop", "deepfake", "synthetic content", "content farm",
+        "ai generated content", "ai misinformation",
     ],
 }
 
-# How many hours back to look for stories
 LOOKBACK_HOURS = 36
-# Target number of stories for the post
 MAX_STORIES = 25
 MIN_STORIES = 3
-# Request timeout in seconds
 REQUEST_TIMEOUT = 15
-# Delay between feed fetches (be polite)
 FETCH_DELAY = 0.3
-# Output directory (relative to repo root)
 POSTS_DIR = Path("_posts")
+SEEN_URLS_FILE = Path(__file__).parent / "seen_urls.json"
+SEEN_URLS_MAX_AGE_DAYS = 30
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -163,8 +158,28 @@ def strip_html(text: str) -> str:
     if not text:
         return ""
     text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def parse_date(entry) -> datetime | None:
+    for attr in ("published_parsed", "updated_parsed"):
+        val = getattr(entry, attr, None)
+        if val:
+            try:
+                import calendar
+                ts = calendar.timegm(val)
+                return datetime.fromtimestamp(ts, tz=timezone.utc)
+            except Exception:
+                pass
+    for attr in ("published", "updated"):
+        val = getattr(entry, attr, None)
+        if val:
+            try:
+                return dateutil_parser.parse(val).astimezone(timezone.utc)
+            except Exception:
+                pass
+    return None
 
 
 def matches_keywords(text: str) -> bool:
@@ -179,45 +194,101 @@ def matches_keywords(text: str) -> bool:
                 return True
     return False
 
+# ---------------------------------------------------------------------------
+# Cross-day deduplication
+# ---------------------------------------------------------------------------
 
-def parse_date(entry) -> datetime | None:
-    for attr in ("published_parsed", "updated_parsed", "created_parsed"):
-        val = getattr(entry, attr, None)
-        if val:
-            try:
-                return datetime(*val[:6], tzinfo=timezone.utc)
-            except Exception:
-                pass
-    for attr in ("published", "updated", "created"):
-        val = getattr(entry, attr, None)
-        if val:
-            try:
-                return dateutil_parser.parse(val).astimezone(timezone.utc)
-            except Exception:
-                pass
-    return None
+def load_seen_urls() -> dict:
+    """Load the cross-day URL cache. Returns {url: 'YYYY-MM-DD'}."""
+    if SEEN_URLS_FILE.exists():
+        try:
+            with open(SEEN_URLS_FILE) as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
 
+
+def save_seen_urls(seen: dict) -> None:
+    """Save the cross-day URL cache, pruning entries older than SEEN_URLS_MAX_AGE_DAYS."""
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=SEEN_URLS_MAX_AGE_DAYS)).strftime("%Y-%m-%d")
+    pruned = {url: date for url, date in seen.items() if date >= cutoff}
+    with open(SEEN_URLS_FILE, "w") as f:
+        json.dump(pruned, f, indent=2, sort_keys=True)
+    log.info(f"Saved cross-day URL cache: {len(pruned)} entries")
+
+
+def cross_day_deduplicate(stories: list[dict], seen_urls: dict) -> list[dict]:
+    """Remove stories whose URLs appeared in a previous day's report."""
+    fresh = [s for s in stories if s["link"] not in seen_urls]
+    removed = len(stories) - len(fresh)
+    if removed:
+        log.info(f"Cross-day dedup removed {removed} previously-seen stories")
+    return fresh
+
+# ---------------------------------------------------------------------------
+# AI summary
+# ---------------------------------------------------------------------------
+
+def get_ai_summary(url: str, fallback: str) -> str:
+    """Fetch article text and summarize with Claude Haiku. Falls back to RSS description."""
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return fallback[:300] if fallback else ""
+
+    # Try to fetch the full article text
+    article_text = fallback or ""
+    try:
+        resp = requests.get(url, timeout=8, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; SlopReport/1.0)"
+        })
+        if resp.ok:
+            soup = BeautifulSoup(resp.text, "html.parser")
+            for tag in soup(["script", "style", "nav", "footer", "header", "aside"]):
+                tag.decompose()
+            article_text = soup.get_text(separator=" ", strip=True)[:4000]
+    except Exception as e:
+        log.debug(f"Article fetch failed for {url}: {e}")
+
+    try:
+        client = anthropic.Anthropic(api_key=api_key)
+        msg = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=120,
+            messages=[{
+                "role": "user",
+                "content": (
+                    "In 1-2 sentences, summarize the AI content/synthetic media/deepfake angle of this article. "
+                    "Be specific and factual. Do not start with 'This article'.\n\n"
+                    f"{article_text}"
+                )
+            }]
+        )
+        return msg.content[0].text.strip()
+    except Exception as e:
+        log.warning(f"Claude summary failed for {url}: {e}")
+        return fallback[:300] if fallback else ""
+
+# ---------------------------------------------------------------------------
+# Feed fetching
+# ---------------------------------------------------------------------------
 
 def fetch_feed(source: dict) -> list[dict]:
-    url = source["url"]
     name = source["name"]
+    url = source["url"]
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
     stories = []
     try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (compatible; SlopReport/1.0; +https://slopreport.net)"
-        }
-        resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
-        resp.raise_for_status()
-        feed = feedparser.parse(resp.content)
-    except Exception as exc:
-        log.warning(f"[{name}] Failed to fetch feed: {exc}")
-        return stories
+        feed = feedparser.parse(url, request_headers={"User-Agent": "SlopReport/1.0"})
+    except Exception as e:
+        log.warning(f"[{name}] Feed parse error: {e}")
+        return []
 
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
     for entry in feed.entries:
-        title = strip_html(getattr(entry, "title", ""))
+        title = strip_html(getattr(entry, "title", "")).strip()
         summary = strip_html(
-            getattr(entry, "summary", "") or getattr(entry, "description", "")
+            getattr(entry, "summary", "")
+            or getattr(entry, "description", "")
         )
         link = getattr(entry, "link", "")
         if not title or not link:
@@ -255,47 +326,46 @@ def fetch_hacker_news() -> list[dict]:
         }
         try:
             resp = requests.get(
-                HACKER_NEWS_SOURCE["api_url"], params=params, timeout=REQUEST_TIMEOUT
+                HACKER_NEWS_SOURCE["api_url"],
+                params=params,
+                timeout=REQUEST_TIMEOUT,
             )
             resp.raise_for_status()
-            data = resp.json()
-        except Exception as exc:
-            log.warning(f"[Hacker News] API error for query '{query}': {exc}")
+            hits = resp.json().get("hits", [])
+        except Exception as e:
+            log.warning(f"[HN] API error for query '{query}': {e}")
             continue
 
-        for hit in data.get("hits", []):
-            title = hit.get("title", "")
+        for hit in hits:
+            title = (hit.get("title") or "").strip()
             url = hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID','')}"
-            if url in seen_links:
+            if not title or hul in seen_links:
+                continue
+            searchable = f"{title} {hit.get('story_text','')}"
+            if not matches_keywords(searchable):
                 continue
             seen_links.add(url)
-            created_ts = hit.get("created_at_i")
-            pub_date = (
-                datetime.fromtimestamp(created_ts, tz=timezone.utc) if created_ts else None
-            )
-            points = hit.get("points", 0) or 0
-            if points < 10:
-                continue
-            if not title or not matches_keywords(title):
-                continue
+            ts = hit.get("created_at_i")
+            pub_date = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
             stories.append({
                 "title": title,
-                "summary": f"{points} points on Hacker News",
+                "summary": (hit.get("story_text") or "")[:500],
                 "link": url,
-                "source": "Hacker News",
+                "source": HACKER_NEWS_SOURCE["name"],
                 "date": pub_date,
             })
 
-    log.info(f"[Hacker News] {len(stories)} matching stories")
+    log.info(f"[HN] {len(stories)} matching stories")
     return stories
 
 
 def deduplicate(stories: list[dict]) -> list[dict]:
-    seen_titles = set()
-    seen_links = set()
+    """Remove same-run duplicates by normalized title and URL."""
+    seen_titles: set[str] = set()
+    seen_links: set[str] = set()
     result = []
     for s in stories:
-        norm_title = re.sub(r"\W+", " ", s["title"].lower()).strip()
+        norm_title = re.sub(r"[^a-z0-9]", "", s["title"].lower())
         if norm_title in seen_titles or s["link"] in seen_links:
             continue
         seen_titles.add(norm_title)
@@ -303,10 +373,15 @@ def deduplicate(stories: list[dict]) -> list[dict]:
         result.append(s)
     return result
 
+# ---------------------------------------------------------------------------
+# Scoring
+# ---------------------------------------------------------------------------
 
 def score_story(story: dict) -> float:
     score = 0.0
-    text = f"{story['title']} {story['summary']}".lower()
+    title = story["title"].lower()
+    desc = story["summary"].lower()
+
     high_value = [
         "ai slop", "ai spam", "content farm", "synthetic content",
         "ai-generated content", "deepfake", "deep fake",
@@ -316,21 +391,28 @@ def score_story(story: dict) -> float:
         "ai watermark", "c2pa", "non-consensual deepfake",
         "ai byline", "ai newsroom", "information pollution",
     ]
-    score += sum(3.0 for kw in high_value if kw in text)
+    # Title match is worth more than description match
+    score += sum(5.0 for kw in high_value if kw in title)
+    score += sum(3.0 for kw in high_value if kw in desc)
+
     general = [
         "content authenticity", "ai detection", "eu ai act",
         "take it down act", "no fakes act", "ai copyright",
         "bot traffic", "programmatic fraud", "ai disclosure",
         "robo-journalism", "automated journalism",
     ]
-    score += sum(1.0 for kw in general if kw in text)
-    if story["summary"]:
-        score += 1.0
-    if story["date"]:
+    score += sum(3.0 for kw in general if kw in title)
+    score += sum(1.0 for kw in general if kw in desc)
+
+    # Recency bonus
+    if story.get("date"):
         age_hours = (datetime.now(timezone.utc) - story["date"]).total_seconds() / 3600
         score += max(0, (LOOKBACK_HOURS - age_hours) / LOOKBACK_HOURS) * 2.0
     return score
 
+# ---------------------------------------------------------------------------
+# Post generation
+# ---------------------------------------------------------------------------
 
 def format_story_block(idx: int, story: dict) -> str:
     title = story["title"]
@@ -387,10 +469,17 @@ def write_post(content: str, today: datetime) -> Path:
         f.write(content)
     return post_path
 
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 def main():
     today = datetime.now(timezone.utc)
     log.info(f"Slop Report scraper starting — {today.strftime('%Y-%m-%d %H:%M UTC')}")
+
+    # Load cross-day URL cache for deduplication
+    seen_urls = load_seen_urls()
+    log.info(f"Cross-day cache loaded: {len(seen_urls)} URLs from previous reports")
 
     all_stories: list[dict] = []
 
@@ -404,25 +493,36 @@ def main():
 
     log.info(f"Total raw stories before dedup: {len(all_stories)}")
     all_stories = deduplicate(all_stories)
-    log.info(f"Stories after deduplication: {len(all_stories)}")
+    log.info(f"Stories after same-day dedup: {len(all_stories)}")
+
+    all_stories = cross_day_deduplicate(all_stories, seen_urls)
+    log.info(f"Stories after cross-day dedup: {len(all_stories)}")
 
     if len(all_stories) < MIN_STORIES:
         log.warning(
             f"Only {len(all_stories)} stories found (minimum {MIN_STORIES}). "
-            "Post will still be written but may be sparse."
+            "Skipping post generation."
         )
+        sys.exit(1)
 
     all_stories.sort(key=score_story, reverse=True)
     selected = all_stories[:MAX_STORIES]
-    log.info(f"Selected {len(selected)} stories for today's post")
 
-    if not selected:
-        log.error("No stories found — skipping post generation.")
-        sys.exit(1)
+    # Generate AI summaries for selected stories
+    log.info(f"Generating AI summaries for {len(selected)} stories...")
+    for story in selected:
+        story["summary"] = get_ai_summary(story["link"], story["summary"])
+        time.sleep(0.3)  # gentle rate limiting
 
     post_content = generate_post(selected, today)
     post_path = write_post(post_content, today)
     log.info(f"Post written to: {post_path}")
+
+    # Update cross-day URL cache with today's published stories
+    today_str = today.strftime("%Y-%m-%d")
+    for story in selected:
+        seen_urls[story["link"]] = today_str
+    save_seen_urls(seen_urls)
 
     print(f"\n✓ Generated: {post_path}")
     print(f"  Stories:  {len(selected)}")
