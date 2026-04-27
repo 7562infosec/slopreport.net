@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate"
   gem "jekyll-remote-theme"
   gem "jekyll-archives"
+  gem "jekyll-sitemap"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
