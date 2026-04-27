@@ -1,5 +1,4 @@
 name: Daily Slop Report Scrape
-
 on:
   schedule:
     # Run at 08:00 UTC every day
@@ -8,15 +7,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # Required to commit and push the new post
+  contents: write # Required to commit and push the new post
 
 jobs:
   scrape-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true    
-
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -44,20 +42,18 @@ jobs:
         run: python3 scripts/scrape.py
 
       - name: Check for new post
-      id: check_changes
-      run: |
-        git add _posts/
-        CHANGES=$(git status --porcelain _posts/)
-        if [ -z "$CHANGES" ]; then
-          echo "no_new_post=true" >> "$GITHUB_OUTPUT"
-          echo "No new post generated today (no changes in _posts/)."
-        else
-          echo "no_new_post=false" >> "$GITHUB_OUTPUT"
-          echo "New post detected:"
-          git status --short _posts/
-        fi
-
-    
+        id: check_changes
+        run: |
+          git add _posts/
+          CHANGES=$(git status --porcelain _posts/)
+          if [ -z "$CHANGES" ]; then
+            echo "no_new_post=true" >> "$GITHUB_OUTPUT"
+            echo "No new post generated today (no changes in _posts/)."
+          else
+            echo "no_new_post=false" >> "$GITHUB_OUTPUT"
+            echo "New post detected:"
+            git status --short _posts/
+          fi
 
       - name: Commit and push new post
         if: steps.check_changes.outputs.no_new_post == 'false'
