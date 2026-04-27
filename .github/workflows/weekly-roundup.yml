@@ -1,0 +1,74 @@
+name: Weekly Slop Roundup
+
+on:
+  schedule:
+    # Run at 09:00 UTC every Saturday
+    - cron: "0 9 * * 6"
+  # Allow manual triggering
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-roundup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('scripts/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run weekly roundup script
+        run: python3 scripts/weekly_roundup.py
+
+      - name: Check for new roundup post
+        id: check_changes
+        run: |
+          git add _posts/
+          CHANGES=$(git status --porcelain _posts/)
+          if [ -z "$CHANGES" ]; then
+            echo "no_new_post=true" >> "$GITHUB_OUTPUT"
+            echo "No weekly roundup generated (no changes in _posts/)."
+          else
+            echo "no_new_post=false" >> "$GITHUB_OUTPUT"
+            echo "Weekly roundup post detected:"
+            git status --short _posts/
+          fi
+
+      - name: Commit and push weekly roundup
+        if: steps.check_changes.outputs.no_new_post == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _posts/
+          git commit -m "Weekly roundup: $(date -u +'%Y-%m-%d')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: steps.check_changes.outputs.no_new_post == 'false'
+        run: |
+          echo "### Weekly Roundup Published" >> $GITHUB_STEP_SUMMARY
+          echo "A weekly roundup was committed and pushed to main." >> $GITHUB_STEP_SUMMARY
+          echo "GitHub Pages will deploy it automatically." >> $GITHUB_STEP_SUMMARY
