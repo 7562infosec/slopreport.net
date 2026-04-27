@@ -3,7 +3,7 @@ tagline: Your daily digest of AI-generated content flooding the internet.
 description: Your daily digest of AI-generated content flooding the internet. All signal, no slop.
 url: "https://slopreport.net"
 
-remote_theme: cotes2020/jekyll-theme-chirpy
+theme: jekyll-theme-chirpy
 
 lang: en
 timezone: America/Chicago
@@ -33,7 +33,6 @@ highlighter: rouge
 markdown: kramdown
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
