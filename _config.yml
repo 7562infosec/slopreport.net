@@ -6,14 +6,14 @@ url: "https://slopreport.net"
 remote_theme: cotes2020/jekyll-theme-chirpy
 
 lang: en
-timezone: America/Chicago
+timezone: America/NewYork
 
 github:
   username: 7562infosec
 
 social:
   name: 7562Infosec
-  email: claudeai@secnetmx.com
+  email: slopreport@secnetmx.com
   links: []
 
 theme_mode: dark
