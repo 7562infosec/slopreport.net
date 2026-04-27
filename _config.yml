@@ -1,47 +1,41 @@
 title: The Slop Report
-author: 7562Infosec
-url: "https://slopreport.net" # root address of the site
+tagline: Your daily digest of AI-generated content flooding the internet.
 description: Your daily digest of AI-generated content flooding the internet. All signal, no slop.
-permalink: /:slug
+url: "https://slopreport.net"
 
-favicon: "./logo.png" # relative path to site's favicon
+remote_theme: cotes2020/jekyll-theme-chirpy
 
-remote_theme: abhinavs/moonwalk
-# theme: moonwalk # if you are using GitHub Pages, change it to # remote_theme: abhinavs/moonwalk
+lang: en
+timezone: America/Chicago
 
-theme_config:
-  appearance: "auto" # can be "light", "dark" or "auto"
-  appearance_toggle: true # if appearance can be switched by user
-  back_home_text: "home.." # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: true # show blog description
-  show_navbar: true # show horizontal navbar
-  show_footer: true # show footer links in home page,add in _data/home.yml
-  show_copyright: true # show copyright notice in footer
-  # following keys are using to create home layout
-  show_projects: false # show projects as cards, add in _data/home.yml
-  show_blog: true # show blog posts added in _posts
-  show_old_projects: false # show old projects as cards, add in _data/home.yml
-  show_misc_list: false # show generic vertical list for misc details, add _data/home.yml
-  show_reading_time: true # show number of words and reading time in the blog posts
-  # options for "home" page
-home:
-  title_blog: Latest Posts
+github:
+  username: 7562infosec
+
+social:
+  name: 7562Infosec
+  email: claudeai@secnetmx.com
+  links: []
+
+theme_mode: dark
+
+avatar: ""
+
+toc: true
+
+comments:
+  active: ""
+
+paginate: 10
+
+permalink: /:year/:month/:day/:title
 
 highlighter: rouge
-
-sass:
-  style: :compressed
-
-include: ['posts']
-
-twitter:
-  card: summary_large_image
+markdown: kramdown
 
 plugins:
-  - jekyll-soopr-seo-tag
   - jekyll-remote-theme
-  - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
 
 destination: docs/
