@@ -339,7 +339,7 @@ def fetch_hacker_news() -> list[dict]:
         for hit in hits:
             title = (hit.get("title") or "").strip()
             url = hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID','')}"
-            if not title or hul in seen_links:
+            if not title or url in seen_links:
                 continue
             searchable = f"{title} {hit.get('story_text','')}"
             if not matches_keywords(searchable):
