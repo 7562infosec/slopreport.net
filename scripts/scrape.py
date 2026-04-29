@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Slop Report — Daily RSS Scraper
+The Slop Report â Daily RSS Scraper
 Fetches AI slop news from 30+ sources, filters by keyword, and generates a Jekyll post.
 Usage: python3 scripts/scrape.py
 """
@@ -29,7 +29,7 @@ KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content — broad but relevant
+    # AI-generated content â broad but relevant
     "ai-generated", "ai generated",
     "generative ai",
     "synthetic content", "synthetic media", "synthetic video",
@@ -76,10 +76,25 @@ KEYWORDS = [
     # Kids / vulnerable audiences
     "youtube kids", "children's content", "kids content",
     "made for kids", "child safety",
+
+    # --- Broader AI industry terms ---
+    "openai", "anthropic", "chatgpt", "claude ai",
+    "gemini", "grok", "copilot",
+    "large language model", "llm",
+    "ai model", "ai system", "ai tool", "ai product", "ai company",
+    "ai safety", "ai policy", "ai regulation", "ai law",
+    "ai ethics", "ai governance", "ai legislation",
+    "ai chip", "ai compute", "ai data center",
+    "ai lawsuit", "ai liability",
+    "foundation model", "frontier model",
+    "gpt-", "claude-", "gemini-",
+    "artificial intelligence",
 ]
 
 RSS_SOURCES = [
     # --- AI / Tech Beat ---
+    {"name": "The Verge AI",       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"},
+    {"name": "TechCrunch AI",      "url": "https://techcrunch.com/category/artificial-intelligence/feed/"},
     {"name": "Wired AI",           "url": "https://www.wired.com/feed/category/artificial-intelligence/latest/rss"},
     {"name": "Ars Technica",       "url": "https://feeds.arstechnica.com/arstechnica/index"},
     {"name": "Slashdot",           "url": "https://rss.slashdot.org/Slashdot/slashdotMain"},
@@ -254,11 +269,11 @@ def get_ai_summary(url: str, fallback: str) -> str:
         client = anthropic.Anthropic(api_key=api_key)
         msg = client.messages.create(
             model="claude-haiku-4-5-20251001",
-            max_tokens=120,
+            max_tokens=250,
             messages=[{
                 "role": "user",
                 "content": (
-                    "In 1-2 sentences, summarize the AI content/synthetic media/deepfake angle of this article. "
+                    "In 2-3 sentences, summarize this AI news story — what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
                     "Be specific and factual. Do not start with 'This article'.\n\n"
                     f"{article_text}"
                 )
@@ -423,7 +438,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{title}]({link})\n"
     block += f"*{source}*"
     if date_str:
-        block += f" · {date_str}"
+        block += f" Â· {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
@@ -437,7 +452,7 @@ def generate_post(stories: list[dict], today: datetime) -> str:
     sources_list = sorted(set(s["source"] for s in stories))
     header = f"""---
 layout: post
-title: "The Slop Report — {date_str}"
+title: "The Slop Report â {date_str}"
 date: {date_iso}
 categories: daily-roundup
 ---
@@ -475,7 +490,7 @@ def write_post(content: str, today: datetime) -> Path:
 
 def main():
     today = datetime.now(timezone.utc)
-    log.info(f"Slop Report scraper starting — {today.strftime('%Y-%m-%d %H:%M UTC')}")
+    log.info(f"Slop Report scraper starting â {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     # Load cross-day URL cache for deduplication
     seen_urls = load_seen_urls()
@@ -524,7 +539,7 @@ def main():
         seen_urls[story["link"]] = today_str
     save_seen_urls(seen_urls)
 
-    print(f"\n✓ Generated: {post_path}")
+    print(f"\nâ Generated: {post_path}")
     print(f"  Stories:  {len(selected)}")
     print(f"  Sources:  {', '.join(sorted(set(s['source'] for s in selected)))}")
 
