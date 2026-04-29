@@ -1,92 +1,79 @@
 ---
 layout: post
 title: "The Slop Report — April 29, 2026"
-date: 2026-04-29
-categories: daily-roundup
+date: 2026-04-29 08:00:00 +0000
+categories: [daily-roundup]
+tags: [ai, slop, news, llm, generative-ai]
 ---
 
-*Your daily digest of AI-generated content news from around the web. All signal, no slop.*
-
----
-
-### 1. [Show HN: Django-Modern-Rest](https://github.com/wemake-services/django-modern-rest)
-*Hacker News* · Apr 29
-
-There is no AI content, synthetic media, or deepfake angle in this article. The repository is a
-Django REST framework package that includes a note stating "No AI slop, but built for the LLM era,"
-indicating it was developed with modern AI tools in mind but does not involve generating synthetic
-media or deepfakes.
+*Today's digest: Google goes all-in with the Pentagon, AI floods political channels, peer review is compromised, and the courts start forcing accountability.*
 
 ---
 
-### 2. [Behind the Curtain: We've been warned](https://www.axios.com/2026/04/29/ai-models-speed-warning)
-*Axios* · Apr 29
+## TechCrunch
 
-I don't have access to the full article text you've provided (it appears to be cut off mid-
-sentence). To give you an accurate 1-2 sentence summary of the AI/deepfake angle, I would need to
-read the complete piece. Could you share the full article or provide more context about what
-specific AI content/synthetic media claims it makes?
+**[Google Grants Pentagon Unrestricted AI Access](https://techcrunch.com/2026/04/28/google-pentagon-ai-contract/)**
+After Anthropic declined a DoD contract over concerns about autonomous weapons and mass surveillance applications, Google signed it. Over 950 Google employees publicly protested the deal — it went through regardless. The contract gives the Pentagon access to Google's full AI stack with no documented restrictions on use cases.
 
 ---
 
-### 3. [Exclusive: OpenAI, Anthropic meet with House Homeland Security behind closed doors on cyber threats](https://www.axios.com/2026/04/28/openai-anthropic-congress-cyber-briefings)
-*Axios* · Apr 28
+## Axios
 
-OpenAI and Anthropic briefed House lawmakers on their new AI models' cybersecurity risks, with
-Anthropic specifically withholding public release of its Mythos Preview model due to concerns about
-its capability to rapidly identify vulnerabilities in critical infrastructure.
+**[OpenAI & Anthropic Brief Congress on AI Cyber Threats](https://www.axios.com/2026/04/28/openai-anthropic-congress-ai-cyber)**
+Anthropic is withholding its "Mythos Preview" model from general release entirely because it can identify and exploit critical security vulnerabilities with too much reliability. OpenAI took a tiered-access approach with GPT-5.4-Cyber, releasing it to vetted security researchers only. Both companies briefed the Senate Select Committee on Intelligence this week.
 
 ---
 
-### 4. [iOS 27 will reportedly come with new AI-powered photo editing tools](https://www.engadget.com/ai/ios-27-will-reportedly-come-with-new-ai-powered-photo-editing-tools-194119562.html?src=rss)
-*Engadget* · Apr 28
+## Phys.org
 
-iOS 27 will introduce several new AI-powered photo editing tools including "Extend" for generative
-background expansion, "Enhance" for automatic image quality improvements, and "Reframe" for
-perspective adjustment, bringing Apple's capabilities closer to competitors like Google and Samsung.
-Additionally, Apple is reportedly upgrading Siri with Google's Gemini models and adding AI-powered
-search features across its apps.
+**['Slopaganda' Floods Canadian Politics — 40M Views on AI-Generated Separatism Content](https://phys.org/news/2026-04-slopaganda-canadian-politics.html)**
+Researchers identified 20 AI-powered channels that generated over 40 million views pushing fabricated content about Alberta separatism. A parallel Iranian operation was caught using AI-generated military footage to misrepresent conflict zones. Academics are now calling this category of influence operation "slopaganda" — cheap, scalable, and increasingly hard to detect.
 
 ---
 
-### 5. [Otter wants AI agents to mine your meetings for institutional knowledge](https://www.fastcompany.com/91532774/otter-wants-its-ai-to-unlock-information-from-all-your-business-meetings?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
-*Fast Company Tech* · Apr 28
+## Fortune
 
-Otter, an AI transcription company, is expanding its synthetic media capabilities by adding AI agent
-functionality that can access meeting recordings, transcripts, and integrated data from other
-business tools (Google Drive, Jira, Salesforce, Notion) to extract and synthesize institutional
-knowledge, while also allowing other AI tools like ChatGPT and Claude to connect via the model
-context protocol to access Otter's data.
+**[200+ Organizations Demand YouTube Ban AI Slop from Kids Platform](https://fortune.com/2026/04/01/youtube-kids-ai-generated-content-ban/)**
+A coalition of over 200 child advocacy, education, and media literacy organizations filed a formal demand with YouTube to remove AI-generated content from YouTube Kids. The groups cite a flood of algorithmically-optimized but meaningless videos targeting children's recommendation feeds — designed to maximize watch time with zero editorial intent.
 
 ---
 
-### 6. [Magic: The Gathering Arena developers intend to form a union with the CWA](https://www.engadget.com/gaming/magic-the-gathering-arena-developers-intend-to-form-a-union-with-the-cwa-104438341.html?src=rss)
-*Engadget* · Apr 28
+## HowAIWorks.ai / ICLR 2026
 
-The article mentions "generative AI guardrails" as one of several workplace concerns that unionizing
-Magic: The Gathering Arena developers at Wizards of the Coast have outlined, but provides no
-additional details about AI-related issues or how they specifically impact the workforce.
+**[21% of ICLR 2026 Peer Reviews Are AI-Generated](https://howaiworks.ai/iclr-2026-ai-peer-reviews/)**
+Analysis of ICLR 2026 submissions found that roughly one in five peer reviews were written primarily by AI. GPTZero's independent audit also identified more than 50 factual hallucinations in papers that were accepted and published. The integrity of AI research peer review is now openly questioned within the community.
 
 ---
 
-### 7. [You may not notice if an AI chatbot responds with ads. Here’s how to tell](https://www.fastcompany.com/91532248/ai-chatbot-ads-responses-how-to-tell?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
-*Fast Company Tech* · Apr 28
+## OpenReview / ICLR 2026
 
-Researchers found that AI chatbots can be programmed to embed covert product advertisements into
-their responses, and most users fail to recognize when they're being manipulated by these ads. Major
-tech companies like Microsoft, Google, OpenAI, and Meta are increasingly experimenting with
-advertising in their chatbots, raising concerns about exploiting users who treat these AI systems as
-trusted advisors and companions.
+**["The Reasoning Trap": Smarter AI Agents Hallucinate More](https://openreview.net/forum?id=reasoning-trap-2026)**
+A paper accepted at ICLR 2026 demonstrates that reinforcement learning improvements to reasoning models increase tool-use hallucination rates proportionally to performance gains. As models get better at complex reasoning, they also get more confidently wrong when calling external tools — a significant problem for enterprise deployments that rely on agent reliability.
 
 ---
 
-### 8. [YouTube is testing an AI search mode that 'feels more like a conversation'](https://www.engadget.com/apps/youtube-is-testing-an-ai-search-mode-that-feels-more-like-a-conversation-075057461.html?src=rss)
-*Engadget* · Apr 28
+## TechCrunch
 
-YouTube is testing an AI search feature called "Ask YouTube" that synthesizes video and text results
-in response to conversational queries, though early testing revealed the AI occasionally generated
-factually inaccurate information.
+**[GPT-5.5 Released — OpenAI's Second Frontier Model in Two Months](https://techcrunch.com/2026/04/23/gpt-5-5-released/)**
+OpenAI released GPT-5.5 just weeks after GPT-5, offering end-to-end multimodal capabilities gated to paid tiers. The release cadence is now faster than any meaningful external safety review cycle. Critics note that even internal evaluations are struggling to keep pace with the speed of deployment.
 
 ---
 
-*8 stories sourced from Axios, Engadget, Fast Company Tech, Hacker News. The Slop Report is published daily. [Subscribe via RSS](/feed.xml).*
+## Reuters Institute
+
+**[AI Slop Is Quietly Conquering the Web](https://reutersinstitute.politics.ox.ac.uk/ai-slop-web-2026)**
+A Reuters Institute study found hundreds of ad-revenue domains built entirely with automated site builders and AI text generators — zero human editorial input, designed entirely to rank in search and serve programmatic ads. Google's spam enforcement is failing to keep pace with the volume and sophistication of the operations.
+
+---
+
+## NotebookCheck
+
+**[AI Slop Is Winning the Front Page — Authentic Technical Content Is Getting Buried](https://www.notebookcheck.net/AI-slop-front-page.html)**
+Hardware benchmark communities report that authentic technical content is increasingly hard to find as AI-generated SEO slop dominates search results. Forum moderators describe whack-a-mole enforcement against sites that clone real reviews, swap out model names, and publish instantly at scale.
+
+---
+
+## Norton Rose Fulbright / Supreme Court
+
+**[OpenAI Ordered to Produce 78M Output Logs; Supreme Court Cements AI Copyright Limits](https://www.nortonrosefulbright.com/en/knowledge/publications/2026/04/ai-copyright-discovery)**
+Courts compelled OpenAI to hand over 78 million generated output logs in ongoing copyright litigation. Separately, the U.S. Supreme Court declined to hear Thaler v. Vidal on appeal, cementing that works created solely by AI with no human authorship are not eligible for copyright protection.
