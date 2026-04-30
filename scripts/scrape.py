@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Slop Report â Daily RSS Scraper
+The Slop Report Ã¢ÂÂ Daily RSS Scraper
 Fetches AI slop news from 30+ sources, filters by keyword, and generates a Jekyll post.
 Usage: python3 scripts/scrape.py
 """
@@ -29,7 +29,7 @@ KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content â broad but relevant
+    # AI-generated content Ã¢ÂÂ broad but relevant
     "ai-generated", "ai generated",
     "generative ai",
     "synthetic content", "synthetic media", "synthetic video",
@@ -166,6 +166,21 @@ logging.basicConfig(
 log = logging.getLogger("slop-report")
 
 # ---------------------------------------------------------------------------
+# Retry helper
+# ---------------------------------------------------------------------------
+
+def retry(fn, attempts=3, delay=20, label=""):
+    """Call fn() up to attempts times with backoff between tries."""
+    for i in range(1, attempts + 1):
+        try:
+            return fn()
+        except Exception as e:
+            if i == attempts:
+                raise
+            log.warning(f"Retry {i}/{attempts} for {label}: {e}. Waiting {delay}s...")
+            time.sleep(delay)
+
+# ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
@@ -266,19 +281,21 @@ def get_ai_summary(url: str, fallback: str) -> str:
         log.debug(f"Article fetch failed for {url}: {e}")
 
     try:
-        client = anthropic.Anthropic(api_key=api_key)
-        msg = client.messages.create(
+        def _call_api():
+            c = anthropic.Anthropic(api_key=api_key)
+            return c.messages.create(
             model="claude-haiku-4-5-20251001",
             max_tokens=250,
             messages=[{
                 "role": "user",
                 "content": (
-                    "In 2-3 sentences, summarize this AI news story — what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
+                    "In 2-3 sentences, summarize this AI news story â what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
                     "Be specific and factual. Do not start with 'This article'.\n\n"
                     f"{article_text}"
                 )
             }]
         )
+        msg = retry(_call_api, attempts=3, delay=15, label="Anthropic API")
         return msg.content[0].text.strip()
     except Exception as e:
         log.warning(f"Claude summary failed for {url}: {e}")
@@ -438,7 +455,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{title}]({link})\n"
     block += f"*{source}*"
     if date_str:
-        block += f" Â· {date_str}"
+        block += f" ÃÂ· {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
@@ -452,7 +469,7 @@ def generate_post(stories: list[dict], today: datetime) -> str:
     sources_list = sorted(set(s["source"] for s in stories))
     header = f"""---
 layout: post
-title: "The Slop Report â {date_str}"
+title: "The Slop Report Ã¢ÂÂ {date_str}"
 date: {date_iso}
 categories: daily-roundup
 ---
@@ -490,7 +507,7 @@ def write_post(content: str, today: datetime) -> Path:
 
 def main():
     today = datetime.now(timezone.utc)
-    log.info(f"Slop Report scraper starting â {today.strftime('%Y-%m-%d %H:%M UTC')}")
+    log.info(f"Slop Report scraper starting Ã¢ÂÂ {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     # Load cross-day URL cache for deduplication
     seen_urls = load_seen_urls()
@@ -539,7 +556,7 @@ def main():
         seen_urls[story["link"]] = today_str
     save_seen_urls(seen_urls)
 
-    print(f"\nâ Generated: {post_path}")
+    print(f"\nÃ¢ÂÂ Generated: {post_path}")
     print(f"  Stories:  {len(selected)}")
     print(f"  Sources:  {', '.join(sorted(set(s['source'] for s in selected)))}")
 
