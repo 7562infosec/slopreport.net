@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Slop Report Ã¢ÂÂ Daily RSS Scraper
+The Slop Report ÃÂ¢ÃÂÃÂ Daily RSS Scraper
 Fetches AI slop news from 30+ sources, filters by keyword, and generates a Jekyll post.
 Usage: python3 scripts/scrape.py
 """
@@ -29,7 +29,7 @@ KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content Ã¢ÂÂ broad but relevant
+    # AI-generated content ÃÂ¢ÃÂÃÂ broad but relevant
     "ai-generated", "ai generated",
     "generative ai",
     "synthetic content", "synthetic media", "synthetic video",
@@ -289,7 +289,7 @@ def get_ai_summary(url: str, fallback: str) -> str:
             messages=[{
                 "role": "user",
                 "content": (
-                    "In 2-3 sentences, summarize this AI news story â what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
+                    "In 2-3 sentences, summarize this AI news story Ã¢ÂÂ what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
                     "Be specific and factual. Do not start with 'This article'.\n\n"
                     f"{article_text}"
                 )
@@ -455,7 +455,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{title}]({link})\n"
     block += f"*{source}*"
     if date_str:
-        block += f" ÃÂ· {date_str}"
+        block += f" ÃÂÃÂ· {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
@@ -469,7 +469,7 @@ def generate_post(stories: list[dict], today: datetime) -> str:
     sources_list = sorted(set(s["source"] for s in stories))
     header = f"""---
 layout: post
-title: "The Slop Report Ã¢ÂÂ {date_str}"
+title: "The Slop Report ÃÂ¢ÃÂÃÂ {date_str}"
 date: {date_iso}
 categories: daily-roundup
 ---
@@ -507,7 +507,7 @@ def write_post(content: str, today: datetime) -> Path:
 
 def main():
     today = datetime.now(timezone.utc)
-    log.info(f"Slop Report scraper starting Ã¢ÂÂ {today.strftime('%Y-%m-%d %H:%M UTC')}")
+    log.info(f"Slop Report scraper starting ÃÂ¢ÃÂÃÂ {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     # Load cross-day URL cache for deduplication
     seen_urls = load_seen_urls()
@@ -523,18 +523,21 @@ def main():
     hn_stories = fetch_hacker_news()
     all_stories.extend(hn_stories)
 
-    log.info(f"Total raw stories before dedup: {len(all_stories)}")
+    total_raw = len(all_stories)
+    log.info(f"Total raw stories before dedup: {total_raw}")
     all_stories = deduplicate(all_stories)
     log.info(f"Stories after same-day dedup: {len(all_stories)}")
 
     all_stories = cross_day_deduplicate(all_stories, seen_urls)
-    log.info(f"Stories after cross-day dedup: {len(all_stories)}")
+    after_dedup = len(all_stories)
+    log.info(f"Stories after cross-day dedup: {after_dedup}")
 
     if len(all_stories) < MIN_STORIES:
         log.warning(
             f"Only {len(all_stories)} stories found (minimum {MIN_STORIES}). "
             "Skipping post generation."
         )
+        write_github_summary(total_raw, after_dedup, [], False)
         sys.exit(1)
 
     all_stories.sort(key=score_story, reverse=True)
@@ -556,9 +559,49 @@ def main():
         seen_urls[story["link"]] = today_str
     save_seen_urls(seen_urls)
 
-    print(f"\nÃ¢ÂÂ Generated: {post_path}")
+    write_github_summary(total_raw, after_dedup, selected, True, post_path)
+    print(f"\nÃÂ¢ÃÂÃÂ Generated: {post_path}")
     print(f"  Stories:  {len(selected)}")
     print(f"  Sources:  {', '.join(sorted(set(s['source'] for s in selected)))}")
+
+
+
+def write_github_summary(total_raw: int, after_dedup: int, selected: list, published: bool, post_path=None) -> None:
+    """Write a markdown run summary to $GITHUB_STEP_SUMMARY for the Actions UI."""
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not summary_path:
+        return  # Not running in GitHub Actions
+
+    lines = ["## \ud83d\udcf0 Slop Report Scrape Summary\n"]
+    lines.append("| Metric | Value |")
+    lines.append("|---|---|")
+    lines.append(f"| Raw stories fetched | {total_raw} |")
+    lines.append(f"| After deduplication | {after_dedup} |")
+    lines.append(f"| Selected for post | {len(selected)} |")
+    lines.append(f"| Post published | {'\u2705 Yes' if published else '\u274c No — below threshold'} |")
+    if post_path:
+        lines.append(f"| Post path | `{post_path}` |")
+    lines.append("")
+
+    if selected:
+        lines.append("### Top Stories\n")
+        lines.append("| Score | Title | Source |")
+        lines.append("|---|---|---|")
+        for s in selected[:10]:
+            sc = round(score_story(s), 1)
+            title = (s.get("title") or "Untitled")[:70].replace("|", "-")
+            source = s.get("source", "?")
+            lines.append(f"| {sc} | {title} | {source} |")
+        lines.append("")
+    else:
+        lines.append("> No stories met the minimum threshold today.\n")
+
+    try:
+        with open(summary_path, "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+        log.info("GitHub Actions summary written.")
+    except Exception as e:
+        log.warning(f"Could not write GitHub summary: {e}")
 
 
 if __name__ == "__main__":
