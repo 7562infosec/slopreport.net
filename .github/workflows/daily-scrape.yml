@@ -22,10 +22,10 @@ jobs:
           # Fetch full history so git push works correctly
           fetch-depth: 0
 
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Cache pip dependencies
         uses: actions/cache@v4
