@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Slop Report Ã¢ÂÂ May 2, 2026"
+title: "The Slop Report - May 2, 2026"
 date: 2026-05-02
 categories: daily-roundup
 ---
