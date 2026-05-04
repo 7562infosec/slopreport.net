@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Slop Report ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Daily RSS Scraper
+The Slop Report  -  Daily RSS Scraper
 Fetches AI slop news from 30+ sources, filters by keyword, and generates a Jekyll post.
 Usage: python3 scripts/scrape.py
 """
@@ -29,7 +29,7 @@ KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ broad but relevant
+    # AI-generated content  -  broad but relevant
     "ai-generated", "ai generated",
     "generative ai",
     "synthetic content", "synthetic media", "synthetic video",
@@ -289,7 +289,7 @@ def get_ai_summary(url: str, fallback: str) -> str:
             messages=[{
                 "role": "user",
                 "content": (
-                    "In 2-3 sentences, summarize this AI news story ÃÂ¢ÃÂÃÂ what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
+                    "In 2-3 sentences, summarize this AI news story  -  what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
                     "Be specific and factual. Do not start with 'This article'.\n\n"
                     f"{article_text}"
                 )
@@ -455,7 +455,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{title}]({link})\n"
     block += f"*{source}*"
     if date_str:
-        block += f" ÃÂÃÂÃÂÃÂ· {date_str}"
+        block += f"  - · {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
@@ -469,7 +469,7 @@ def generate_post(stories: list[dict], today: datetime) -> str:
     sources_list = sorted(set(s["source"] for s in stories))
     header = f"""---
 layout: post
-title: "The Slop Report ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ {date_str}"
+title: "The Slop Report  -  {date_str}"
 date: {date_iso}
 categories: daily-roundup
 ---
@@ -507,7 +507,7 @@ def write_post(content: str, today: datetime) -> Path:
 
 def main():
     today = datetime.now(timezone.utc)
-    log.info(f"Slop Report scraper starting ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ {today.strftime('%Y-%m-%d %H:%M UTC')}")
+    log.info(f"Slop Report scraper starting  -  {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     # Load cross-day URL cache for deduplication
     seen_urls = load_seen_urls()
@@ -560,7 +560,7 @@ def main():
     save_seen_urls(seen_urls)
 
     write_github_summary(total_raw, after_dedup, selected, True, post_path)
-    print(f"\nÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Generated: {post_path}")
+    print(f"\n- Generated: {post_path}")
     print(f"  Stories:  {len(selected)}")
     print(f"  Sources:  {', '.join(sorted(set(s['source'] for s in selected)))}")
 
