@@ -165,6 +165,29 @@ logging.basicConfig(
 )
 log = logging.getLogger("slop-report")
 
+import urllib.parse
+
+def sanitize_url(url: str) -> str:
+    """Accept only http/https URLs; return empty string for anything else."""
+    try:
+        parsed = urllib.parse.urlparse(url.strip())
+        if parsed.scheme not in ("http", "https"):
+            return ""
+        # Reconstruct to normalize
+        return urllib.parse.urlunparse(parsed)
+    except Exception:
+        return ""
+
+def sanitize_text(text: str) -> str:
+    """Strip control chars and escape markdown-sensitive characters in titles/summaries."""
+    if not text:
+        return ""
+    # Remove control characters (except tab/newline)
+    text = "".join(c for c in text if c >= " " or c in "\t\n")
+    # Truncate very long tokens
+    return text[:500]
+
+
 # ---------------------------------------------------------------------------
 # Retry helper
 # ---------------------------------------------------------------------------
@@ -452,7 +475,7 @@ def format_story_block(idx: int, story: dict) -> str:
     link = story["link"]
     summary = story["summary"]
     date_str = story["date"].strftime("%b %-d") if story["date"] else ""
-    block = f"### {idx}. [{title}]({link})\n"
+    block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or "#"}\n"
     block += f"*{source}*"
     if date_str:
         block += f"  - · {date_str}"
