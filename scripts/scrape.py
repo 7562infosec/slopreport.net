@@ -475,7 +475,7 @@ def format_story_block(idx: int, story: dict) -> str:
     link = story["link"]
     summary = story["summary"]
     date_str = story["date"].strftime("%b %-d") if story["date"] else ""
-    block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or "#"}\n"
+    block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or '#'})\n"
     block += f"*{source}*"
     if date_str:
         block += f"  - · {date_str}"
