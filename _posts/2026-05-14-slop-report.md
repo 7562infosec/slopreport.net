@@ -9,7 +9,7 @@ categories: daily-roundup
 
 ---
 
-### 1. [4 questions you should ask to catch programmatic ad fraud](https://martech.org/4-questions-you-should-ask-to-catch-programmatic-ad-fraud/
+### 1. [4 questions you should ask to catch programmatic ad fraud](https://martech.org/4-questions-you-should-ask-to-catch-programmatic-ad-fraud/)
 *MarTech*  - · May 13
 
 # Summary  The article discusses how programmatic advertising fraud is costing the industry $26.8
@@ -22,7 +22,7 @@ paths and verification methods—to catch fraud before it depletes budgets.
 
 ---
 
-### 2. [Podcast: The Chinese Deepfake Software Powering Scams](https://www.404media.co/podcast-the-chinese-deepfake-software-powering-scams/
+### 2. [Podcast: The Chinese Deepfake Software Powering Scams](https://www.404media.co/podcast-the-chinese-deepfake-software-powering-scams/)
 *404 Media*  - · May 13
 
 # Summary  404 Media obtained Haotian AI, Chinese-language deepfake software that enables real-time
@@ -34,7 +34,7 @@ technology poses significant security and fraud risks globally.
 
 ---
 
-### 3. [The shock of seeing your body used in deepfake porn](https://www.technologyreview.com/2026/05/14/1137161/ai-porn-nonconsensual-deepfakes-takedown-piracy-copyright/
+### 3. [The shock of seeing your body used in deepfake porn](https://www.technologyreview.com/2026/05/14/1137161/ai-porn-nonconsensual-deepfakes-takedown-piracy-copyright/)
 *MIT Technology Review*  - · May 14
 
 # Summary  Jennifer, a former adult content creator, discovered her body had been used without
@@ -48,7 +48,7 @@ and loss of income to pirated deepfakes.
 
 ---
 
-### 4. [Arborium is AI slopware and should not be trusted](https://ewie.online/posts/20260214-arborium-is-ai-slopw/
+### 4. [Arborium is AI slopware and should not be trusted](https://ewie.online/posts/20260214-arborium-is-ai-slopw/)
 *Hacker News*  - · May 13
 
 Evie On-line criticizes Arborium, a new tree-sitter-based syntax highlighting tool created by
@@ -61,7 +61,7 @@ lack of proper documentation.
 
 ---
 
-### 5. [Show HN: Learn algebra together, no AI slop, no ads or freemium, no registration](https://algebra.tutlm.com/
+### 5. [Show HN: Learn algebra together, no AI slop, no ads or freemium, no registration](https://algebra.tutlm.com/)
 *Hacker News*  - · May 13
 
 I don't have access to the specific article you're referring to. To provide an accurate summary of
@@ -71,7 +71,7 @@ or text, I'd be happy to summarize it for you.
 
 ---
 
-### 6. [Ask HN: What are you working on (non-AI)?](https://news.ycombinator.com/item?id=48122103
+### 6. [Ask HN: What are you working on (non-AI)?](https://news.ycombinator.com/item?id=48122103)
 *Hacker News*  - · May 13
 
 I appreciate you sharing this, but this appears to be a community post or forum discussion rather
@@ -82,7 +82,7 @@ discussion about community standards, not reportable AI news.
 
 ---
 
-### 7. [Pope Leo sets Catholics on collision course with AI](https://www.axios.com/2026/05/14/pope-leo-xiv-ai-first-encyclical
+### 7. [Pope Leo sets Catholics on collision course with AI](https://www.axios.com/2026/05/14/pope-leo-xiv-ai-first-encyclical)
 *Axios*  - · May 14
 
 I cannot provide an accurate summary of this article because Pope Leo XIV does not exist—the current
@@ -92,7 +92,7 @@ to help.
 
 ---
 
-### 8. [The SpaceX IPO is already upending the stock market](https://www.axios.com/2026/05/14/spacex-musk-sp-stocks
+### 8. [The SpaceX IPO is already upending the stock market](https://www.axios.com/2026/05/14/spacex-musk-sp-stocks)
 *Axios*  - · May 14
 
 I can see this article appears to be behind a paywall or incomplete. Based on the available excerpt,
@@ -106,7 +106,7 @@ companies that could significantly influence the broader stock market and techno
 
 ---
 
-### 9. [The energy squeeze behind the Iran war and AI boom](https://www.axios.com/2026/05/14/energy-squeeze-iran-ai-boom
+### 9. [The energy squeeze behind the Iran war and AI boom](https://www.axios.com/2026/05/14/energy-squeeze-iran-ai-boom)
 *Axios*  - · May 14
 
 I don't have access to the full article, but based on the excerpt provided: Energy has emerged as
@@ -118,7 +118,7 @@ in ways that are becoming impossible to ignore.
 
 ---
 
-### 10. [Microsoft brings tab intelligence to Edge browser, and I dearly wish Apple would add it to Safari](https://www.digitaltrends.com/computing/microsoft-brings-tab-intelligence-to-edge-browser-and-i-dearly-wish-apple-would-add-it-to-safari/
+### 10. [Microsoft brings tab intelligence to Edge browser, and I dearly wish Apple would add it to Safari](https://www.digitaltrends.com/computing/microsoft-brings-tab-intelligence-to-edge-browser-and-i-dearly-wish-apple-would-add-it-to-safari/)
 *Digital Trends*  - · May 14
 
 # Summary  Microsoft has added "tab intelligence" to its Edge browser, allowing Copilot to read and
@@ -130,7 +130,7 @@ powered tab management features.
 
 ---
 
-### 11. [Cerebras raises $5.55bn in the biggest US tech IPO since Snowflake](https://thenextweb.com/news/cerebras-ipo-5-55-billion-biggest-tech-2026
+### 11. [Cerebras raises $5.55bn in the biggest US tech IPO since Snowflake](https://thenextweb.com/news/cerebras-ipo-5-55-billion-biggest-tech-2026)
 *The Next Web*  - · May 14
 
 # Summary  Cerebras Systems, a chip company specializing in large-scale AI inference processors,
@@ -145,7 +145,7 @@ of revenue.
 
 ---
 
-### 12. [This memory chip works at 700 degrees Celsius. The startup behind it is already building AI chips that compute where GPUs cannot.](https://thenextweb.com/news/tetramem-memristor-700c-space-ai-computing
+### 12. [This memory chip works at 700 degrees Celsius. The startup behind it is already building AI chips that compute where GPUs cannot.](https://thenextweb.com/news/tetramem-memristor-700c-space-ai-computing)
 *The Next Web*  - · May 14
 
 USC researchers have developed a memristor memory chip that operates reliably at 700 degrees
@@ -158,7 +158,7 @@ processors by using physical computation rather than sequential digital steps.
 
 ---
 
-### 13. [OpenAI says no user data was touched in the TanStack npm worm](https://thenextweb.com/news/openai-tanstack-npm-supply-chain-mini-shai-hulud
+### 13. [OpenAI says no user data was touched in the TanStack npm worm](https://thenextweb.com/news/openai-tanstack-npm-supply-chain-mini-shai-hulud)
 *The Next Web*  - · May 14
 
 # Summary  On May 11, attackers compromised 42 TanStack npm packages (downloaded over 518 million
@@ -172,7 +172,7 @@ compromised over 170 packages across multiple platforms.
 
 ---
 
-### 14. [Microsoft is quietly shopping for an OpenAI replacement](https://thenextweb.com/news/microsoft-startup-deals-life-after-openai
+### 14. [Microsoft is quietly shopping for an OpenAI replacement](https://thenextweb.com/news/microsoft-startup-deals-life-after-openai)
 *The Next Web*  - · May 14
 
 Microsoft is actively seeking acquisitions or partnerships with AI startups to reduce its dependence
@@ -186,7 +186,7 @@ ship a frontier general-purpose language model.
 
 ---
 
-### 15. [AI models are getting better at replacing cybersecurity pros on certain tasks](https://www.theregister.com/ai-ml/2026/05/14/ai-models-are-getting-better-at-replacing-cybersecurity-pros-on-certain-tasks/5240065
+### 15. [AI models are getting better at replacing cybersecurity pros on certain tasks](https://www.theregister.com/ai-ml/2026/05/14/ai-models-are-getting-better-at-replacing-cybersecurity-pros-on-certain-tasks/5240065)
 *The Register*  - · May 14
 
 # Summary  The UK AI Security Institute found that advanced AI models like Claude Sonnet 4.5 and
@@ -200,7 +200,7 @@ capability.
 
 ---
 
-### 16. [Clio’s $500M milestone arrives just as Anthropic ups the ante](https://techcrunch.com/2026/05/13/clios-500m-milestone-arrives-just-as-anthropic-ups-the-ante/
+### 16. [Clio’s $500M milestone arrives just as Anthropic ups the ante](https://techcrunch.com/2026/05/13/clios-500m-milestone-arrives-just-as-anthropic-ups-the-ante/)
 *TechCrunch AI*  - · May 14
 
 Clio, a Canadian legal tech company, announced its annual recurring revenue (ARR) reached $500
@@ -212,7 +212,7 @@ becomes a competitor.
 
 ---
 
-### 17. [Microsoft is retiring Copilot Mode on Edge, because everything is Copilot Mode now](https://www.engadget.com/2172610/microsoft-copilot-edge-desktop-mobile/
+### 17. [Microsoft is retiring Copilot Mode on Edge, because everything is Copilot Mode now](https://www.engadget.com/2172610/microsoft-copilot-edge-desktop-mobile/)
 *Engadget*  - · May 14
 
 Microsoft is retiring the dedicated Copilot Mode feature on Edge because its AI capabilities are now
@@ -225,7 +225,7 @@ than maintaining it as a separate mode.
 
 ---
 
-### 18. [Arena AI Model ELO History](https://mayerwin.github.io/AI-Arena-History/
+### 18. [Arena AI Model ELO History](https://mayerwin.github.io/AI-Arena-History/)
 *Hacker News*  - · May 14
 
 I don't see a complete news article here—this appears to be documentation for an AI model
@@ -238,7 +238,7 @@ between announced versions.
 
 ---
 
-### 19. [Fact-checkers ask federal judge to block Trump policy they say chills free speech](https://www.poynter.org/ethics-trust/2026/coalition-for-independent-technology-research-v-rubio/
+### 19. [Fact-checkers ask federal judge to block Trump policy they say chills free speech](https://www.poynter.org/ethics-trust/2026/coalition-for-independent-technology-research-v-rubio/)
 *Poynter*  - · May 14
 
 # Summary  Fact-checkers, journalists, and researchers filed a federal lawsuit challenging a 2025
@@ -252,7 +252,7 @@ disinformation, and content moderation issues.
 
 ---
 
-### 20. [Microsoft&#8217;s Edge Copilot update uses AI to pull information from across your tabs](https://www.theverge.com/tech/930188/microsoft-edge-copilot-ai-tabs
+### 20. [Microsoft&#8217;s Edge Copilot update uses AI to pull information from across your tabs](https://www.theverge.com/tech/930188/microsoft-edge-copilot-ai-tabs)
 *The Verge AI*  - · May 13
 
 Microsoft is rolling out a major update to Edge's Copilot AI assistant that can now access
@@ -266,7 +266,7 @@ access.
 
 ---
 
-### 21. [SOLAI Launches $399 Solode Neo Linux AI Computer](https://hardware.slashdot.org/story/26/05/13/2048210/solai-launches-399-solode-neo-linux-ai-computer?utm_source=rss1.0mainlinkanon&utm_medium=feed
+### 21. [SOLAI Launches $399 Solode Neo Linux AI Computer](https://hardware.slashdot.org/story/26/05/13/2048210/solai-launches-399-solode-neo-linux-ai-computer?utm_source=rss1.0mainlinkanon&utm_medium=feed)
 *Slashdot*  - · May 13
 
 SOLAI has launched the Solode Neo, a $399 Linux-based mini PC featuring an Intel N150 processor
@@ -279,7 +279,7 @@ calling it an AI computer constitutes genuine innovation.
 
 ---
 
-### 22. [Software Developers Say AI Is Rotting Their Brains](https://developers.slashdot.org/story/26/05/13/1949225/software-developers-say-ai-is-rotting-their-brains?utm_source=rss1.0mainlinkanon&utm_medium=feed
+### 22. [Software Developers Say AI Is Rotting Their Brains](https://developers.slashdot.org/story/26/05/13/1949225/software-developers-say-ai-is-rotting-their-brains?utm_source=rss1.0mainlinkanon&utm_medium=feed)
 *Slashdot*  - · May 13
 
 # Summary  Software developers on platforms like Reddit and Hacker News are reporting that using AI
@@ -292,7 +292,7 @@ software engineers.
 
 ---
 
-### 23. [I’m not sold on Googlebook’s future, but it sure has two big wins I can’t ignore](https://www.digitaltrends.com/computing/im-not-sold-on-googlebooks-future-but-it-sure-has-two-big-wins-i-cant-ignore/
+### 23. [I’m not sold on Googlebook’s future, but it sure has two big wins I can’t ignore](https://www.digitaltrends.com/computing/im-not-sold-on-googlebooks-future-but-it-sure-has-two-big-wins-i-cant-ignore/)
 *Digital Trends*  - · May 13
 
 Google introduced Googlebook, a new category of AI-centric laptops centered around its Gemini
@@ -306,7 +306,7 @@ demonstrate a fresh approach to laptop design beyond traditional operating syste
 
 ---
 
-### 24. [Anthropic butts in to small business, promises help with payroll and other core tasks](https://www.theregister.com/ai-ml/2026/05/13/anthropic-butts-in-to-small-business-promises-help-with-payroll-and-other-core-tasks/5239967
+### 24. [Anthropic butts in to small business, promises help with payroll and other core tasks](https://www.theregister.com/ai-ml/2026/05/13/anthropic-butts-in-to-small-business-promises-help-with-payroll-and-other-core-tasks/5239967)
 *The Register*  - · May 13
 
 Anthropic launched Claude for Small Business, a plugin offering small business owners easy access to
@@ -317,7 +317,7 @@ is protected—a significant privacy trade-off for SMBs seeking affordable autom
 
 ---
 
-### 25. [Anthropic’s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are](https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/
+### 25. [Anthropic’s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are](https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/)
 *TechCrunch AI*  - · May 13
 
 # Summary  Anthropic's Cat Wu, head of product for Claude Code and Cowork, discussed the company's
