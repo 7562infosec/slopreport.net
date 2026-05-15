@@ -77,3 +77,14 @@ jobs:
             echo "A new daily report was committed and pushed to main." >> "$GITHUB_STEP_SUMMARY"
             echo "GitHub Pages will deploy it automatically." >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh api repos/${{ github.repository }}/issues \
+            --method POST \
+            -f title="⚠️ Daily scrape failed — $(date -u +%Y-%m-%d)" \
+            -f body="The daily scrape workflow failed. [View run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" \
+            -f 'labels[]=bug' || true
