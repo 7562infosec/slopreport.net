@@ -188,6 +188,14 @@ def sanitize_text(text: str) -> str:
     return text[:500]
 
 
+def fix_encoding(text: str) -> str:
+    """Fix UTF-8/Latin-1 double-encoding artifacts (e.g. Â· → ·)."""
+    try:
+        return text.encode('latin-1').decode('utf-8')
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return text
+
+
 # ---------------------------------------------------------------------------
 # Retry helper
 # ---------------------------------------------------------------------------
@@ -340,11 +348,11 @@ def fetch_feed(source: dict) -> list[dict]:
         return []
 
     for entry in feed.entries:
-        title = strip_html(getattr(entry, "title", "")).strip()
-        summary = strip_html(
+        title = fix_encoding(strip_html(getattr(entry, "title", "")).strip())
+        summary = fix_encoding(strip_html(
             getattr(entry, "summary", "")
             or getattr(entry, "description", "")
-        )
+        ))
         link = getattr(entry, "link", "")
         if not title or not link:
             continue
@@ -498,6 +506,8 @@ categories: daily-roundup
 ---
 
 *Your daily digest of AI-generated content news from around the web. All signal, no slop.*
+
+<!--more-->
 
 ---
 
