@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "The Slop Report â April 30, 2026"
-date: 2026-04-30
+date: 2026-04-30 08:00:00 +0000
+permalink: /2026/04/30/slop-report/
 categories: daily-roundup
 ---
 
