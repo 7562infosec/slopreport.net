@@ -152,7 +152,7 @@ REQUEST_TIMEOUT = 15
 FETCH_DELAY = 0.3
 POSTS_DIR = Path("_posts")
 SEEN_URLS_FILE = Path(__file__).parent / "seen_urls.json"
-SEEN_URLS_MAX_AGE_DAYS = 30
+SEEN_URLS_MAX_AGE_DAYS = 45
 
 # ---------------------------------------------------------------------------
 # Logging
