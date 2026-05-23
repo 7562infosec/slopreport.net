@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Slop Report — Weekly Roundup
+The Slop Report â Weekly Roundup
 Aggregates the past 7 days of daily Slop Report posts into a single weekly digest.
 Runs every Saturday via GitHub Actions.
 Usage: python3 scripts/weekly_roundup.py
@@ -23,7 +23,7 @@ def parse_daily_post(path: Path) -> list[dict]:
         return []
 
     stories = []
-    # Match blocks like: ### N. [Title](url)\n*Source* · Date\n\nSummary text
+    # Match blocks like: ### N. [Title](url)\n*Source* Â· Date\n\nSummary text
     pattern = re.compile(
         r'### \d+\. \[([^\]]+)\]\(([^)]+)\)\n\*([^*\n]+)\*[^\n]*\n\n(.*?)(?=\n---\n|\Z)',
         re.DOTALL
@@ -74,8 +74,9 @@ def generate_weekly_post(all_stories: list[dict], today: datetime) -> str:
     header = f"""---
 layout: post
 title: "Weekly Slop Roundup — {date_str}"
-date: {date_iso}
-categories: weekly-roundup
+date: {date_iso} 09:00:00 +0000
+categories: [weekly-roundup]
+tags: [ai, slop, news, weekly-roundup]
 ---
 
 *The week's biggest stories on AI-generated content, deepfakes, synthetic media, and information quality.*
@@ -107,7 +108,7 @@ categories: weekly-roundup
 
 def main():
     today = datetime.now(timezone.utc)
-    print(f"Weekly Roundup starting — {today.strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"Weekly Roundup starting â {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     weekly_posts = get_weekly_posts()
     if not weekly_posts:
@@ -132,7 +133,7 @@ def main():
     POSTS_DIR.mkdir(exist_ok=True)
     output_path.write_text(content, encoding="utf-8")
 
-    print(f"\n✓ Weekly roundup written to: {output_path}")
+    print(f"\nâ Weekly roundup written to: {output_path}")
     print(f"  Total stories: {len(all_stories)}")
 
 
