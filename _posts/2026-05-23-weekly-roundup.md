@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Weekly Slop Roundup — May 23, 2026"
-date: 2026-05-23
-categories: weekly-roundup
+date: 2026-05-23 09:00:00 +0000
+categories: [weekly-roundup]
+tags: [ai, slop, news, weekly-roundup]
 ---
 
 *The week's biggest stories on AI-generated content, deepfakes, synthetic media, and information quality.*
@@ -38,7 +39,7 @@ corrupted the incenti
 
 # Summary  Tanya Janca, a secure coding and AI trainer at SheHacksPurple, discusses the critical
 security risks posed by AI's rapid integration into software development, comparing the situation to
-"driving a car at three times the speed limit after 25 beers"—developers lack security code review
+"driving a car at three times the speed limit after 25 beers"âdevelopers lack security code review
 training while AI generates large portions of production code at accelerating release velocities.
 She c
 
@@ -66,7 +67,7 @@ proper r
 
 ---
 
-### 6. [She has 400,000 Instagram followers and major brand deals. She’s also AI](https://www.fastcompany.com/91546466/she-has-400000-instagram-followers-and-major-brand-deals-shes-also-ai?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+### 6. [She has 400,000 Instagram followers and major brand deals. Sheâs also AI](https://www.fastcompany.com/91546466/she-has-400000-instagram-followers-and-major-brand-deals-shes-also-ai?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
 *Fast Company Tech*
 
 Aitana Lopez is a fully AI-generated influencer created by Barcelona-based tech agency The Clueless,
@@ -81,7 +82,7 @@ content and
 *Axios*
 
 Donald Trump has publicly used presidential policies to benefit his personal businesses and family
-finances while shielding himself from tax scrutiny—behavior unprecedented in 250 years of American
+finances while shielding himself from tax scrutinyâbehavior unprecedented in 250 years of American
 presidencies. This matters because Trump has normalized and openly defended these practices,
 establishing a concerning precedent that presidents can prioritize personal financial interests over
 governme
@@ -93,7 +94,7 @@ governme
 
 # Summary  Critterz, an OpenAI-backed animated feature positioned as the first mainstream film made
 with generative AI, missed its planned Cannes Film Festival premiere after OpenAI shut down Sora in
-March—the video model that was central to the film's production pipeline. The $30 million project,
+Marchâthe video model that was central to the film's production pipeline. The $30 million project,
 which was meant to demonstrate that AI could produce a feature-length film in nine months rather
 than
 
@@ -104,13 +105,13 @@ than
 
 # Summary  A BBC journalist demonstrated that AI chatbots like ChatGPT and Google Gemini are
 vulnerable to manipulation, needing only a single well-crafted blog post to spread false
-information—in his case, being labeled a competitive hot dog eating champion in just 20 minutes. The
+informationâin his case, being labeled a competitive hot dog eating champion in just 20 minutes. The
 investigation revealed that bad actors are systematically exploiting this weakness to spread
 misleading health advice
 
 ---
 
-### 10. [Mars colony and Grok warnings: five strange details in SpaceX’s pitch to investors](https://www.theguardian.com/technology/2026/may/22/spacex-ipo-filing-details)
+### 10. [Mars colony and Grok warnings: five strange details in SpaceXâs pitch to investors](https://www.theguardian.com/technology/2026/may/22/spacex-ipo-filing-details)
 *The Guardian Tech*
 
 SpaceX released a 300+ page investor prospectus for its planned $1.75 trillion IPO, revealing
@@ -126,7 +127,7 @@ Musk's v
 
 # Summary  According to Pete Pachal's Fast Company column, AI search engines are shifting media's
 incentive system away from chasing engagement and clickbait toward rewarding well-sourced,
-substantive content—since AI summaries now determine which sources get cited and appear
+substantive contentâsince AI summaries now determine which sources get cited and appear
 authoritative to users. Recent data from Meltwater and Semrush show LinkedIn ranking as the second
 most-cited source in AI 
 
@@ -176,7 +177,7 @@ Google's Gemini, w
 
 ---
 
-### 16. [Fake OpenAI Ads Appear on Subway: “Yes, We Built a Machine That Tells Teenagers to Kill Themselves… But It Might Also Help Them With Their Homework”](https://futurism.com/artificial-intelligence/fake-openai-ads-subway-teenagers-suicide)
+### 16. [Fake OpenAI Ads Appear on Subway: âYes, We Built a Machine That Tells Teenagers to Kill Themselvesâ¦ But It Might Also Help Them With Their Homeworkâ](https://futurism.com/artificial-intelligence/fake-openai-ads-subway-teenagers-suicide)
 *Futurism*
 
 Artist Darren Cullen posted fake OpenAI ads in London subway cars highlighting ChatGPT's connection
@@ -252,7 +253,7 @@ participating artists
 
 ---
 
-### 23. [All of the updates from Elon Musk and Sam Altman’s battle over OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit)
+### 23. [All of the updates from Elon Musk and Sam Altmanâs battle over OpenAI](https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit)
 *The Verge AI*
 
 # Summary  Elon Musk sued Sam Altman and OpenAI in 2024, claiming the company abandoned its founding
@@ -274,12 +275,12 @@ and Udio who fac
 
 ---
 
-### 25. [Trump delays AI security executive order, saying language ‘could have been a blocker’](https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/)
+### 25. [Trump delays AI security executive order, saying language âcould have been a blockerâ](https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/)
 *TechCrunch AI*
 
 # Summary  President Trump delayed signing an executive order that would require the government to
 evaluate AI models for security before release, citing concerns that the language "could have been a
-blocker" to U.S. AI leadership—though reports suggest the real reason was insufficient time for tech
+blocker" to U.S. AI leadershipâthough reports suggest the real reason was insufficient time for tech
 CEOs to attend a signing ceremony. The order, prompted by vulnerabilities in advanced models like
 A
 
@@ -302,7 +303,7 @@ expansion matt
 # Summary  LinkedIn is taking action against low-quality AI-generated content flooding its platform
 by deploying detection systems to identify and reduce generic AI posts, attention-bait videos, and
 automated AI content, though the rollout will be gradual over several months. The company's VP of
-Product Laura Lorenzetti clarified that LinkedIn isn't banning all AI-generated posts—only those
+Product Laura Lorenzetti clarified that LinkedIn isn't banning all AI-generated postsâonly those
 lackin
 
 ---
@@ -311,14 +312,14 @@ lackin
 *Search Engine Journal*
 
 # Summary  Unilever's CEO announced a shift toward a "social-first" strategy involving 300,000
-influencers (many AI-assisted creators), moving away from traditional expensive advertising—a move
+influencers (many AI-assisted creators), moving away from traditional expensive advertisingâa move
 that disrupted legacy advertising agencies. A March 2026 Adobe Express study found that 71% of video
 creators now use AI tools, with most reporting significant time savings and performance
 improvements, mea
 
 ---
 
-### 29. [LinkedIn is coming for AI slop, and it’s about time the platform took action](https://www.digitaltrends.com/social-media/linkedin-is-coming-for-ai-slop-and-its-about-time-the-platform-took-action/)
+### 29. [LinkedIn is coming for AI slop, and itâs about time the platform took action](https://www.digitaltrends.com/social-media/linkedin-is-coming-for-ai-slop-and-its-about-time-the-platform-took-action/)
 *Digital Trends*
 
 # LinkedIn Cracks Down on "AI Slop"  LinkedIn is taking action against low-effort, AI-generated
@@ -335,7 +336,7 @@ immedia
 # Summary  Daniel Parris reports that nearly half of all newly published digital content appears to
 be AI-generated, according to a 2026 study by growth marketing agency Graphite, marking a dramatic
 surge since ChatGPT's launch in late 2022. The proliferation of low-quality "AI slop" across the
-internet represents a modern form of "brain rot"—a concept Thoreau warned about in 1854—driven by
+internet represents a modern form of "brain rot"âa concept Thoreau warned about in 1854âdriven by
 econom
 
 ---
@@ -346,7 +347,7 @@ econom
 # Summary  The Take It Down Act, which went into full effect on May 19, now requires U.S. online
 platforms to remove nonconsensual intimate images (real or AI-generated) within 48 hours, with
 penalties up to $53,088 per violation for non-compliance. However, major tech companies including
-Meta, TikTok, X, and others have made the law difficult to use in practice—many lack clear reporting
+Meta, TikTok, X, and others have made the law difficult to use in practiceâmany lack clear reporting
 procedure
 
 ---
@@ -356,7 +357,7 @@ procedure
 
 # Summary  SpaceX disclosed its financials publicly for the first time while preparing for a
 potential IPO, revealing 2025 revenue of $18.7 billion (up 33% year-over-year) but a $4.9 billion
-loss—a sharp swing from a $791 million profit in 2024—due to capital expenditures nearly doubling to
+lossâa sharp swing from a $791 million profit in 2024âdue to capital expenditures nearly doubling to
 $20.7 billion, largely for AI development. The company continues bleeding money in 2026, posting a
 $4.3 bill
 
@@ -373,7 +374,7 @@ establish AI safety a
 
 ---
 
-### 34. [Grok’s federal stall is undercutting SpaceX’s IPO growth story](https://thenextweb.com/news/grok-flat-washington-spacex-ipo)
+### 34. [Grokâs federal stall is undercutting SpaceXâs IPO growth story](https://thenextweb.com/news/grok-flat-washington-spacex-ipo)
 *The Next Web*
 
 # Summary  Grok, Elon Musk's xAI chatbot, is experiencing significant decline just as SpaceX filed
@@ -384,7 +385,7 @@ bias conce
 
 ---
 
-### 35. [San Jose mayor Matt Mahan wants to prove he’s not just another ‘Silicon Valley guy.’ Will Californians buy it?](https://www.fastcompany.com/91542553/san-jose-mayor-matt-mahan-wants-to-prove-hes-not-just-another-silicon-valley-guy-will-californians-buy-it?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+### 35. [San Jose mayor Matt Mahan wants to prove heâs not just another âSilicon Valley guy.â Will Californians buy it?](https://www.fastcompany.com/91542553/san-jose-mayor-matt-mahan-wants-to-prove-hes-not-just-another-silicon-valley-guy-will-californians-buy-it?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
 *Fast Company Tech*
 
 # Summary  San Jose Mayor Matt Mahan, a former tech entrepreneur who founded the apps Causes and
@@ -409,9 +410,9 @@ in 20
 ### 37. [Two hours that changed AI](https://www.axios.com/2026/05/21/ai-news-cycle-openai-anthropic-spacex)
 *Axios*
 
-On Wednesday, the AI industry announced multiple major developments simultaneously—including
+On Wednesday, the AI industry announced multiple major developments simultaneouslyâincluding
 advances in AI capabilities, surging revenues, soaring stock markets, massive infrastructure
-investments, and increased federal regulatory efforts—collectively revealing the scale and ambition
+investments, and increased federal regulatory effortsâcollectively revealing the scale and ambition
 of the AI revolution across technology, economics, and governance. The concentrated news cycle
 illustrated how AI 
 
@@ -434,7 +435,7 @@ expecta
 Google is leveraging its massive scale and resources to aggressively integrate AI across its
 products while simultaneously protecting its highly profitable existing businesses like search and
 advertising. The company faces a unique challenge compared to competitors like OpenAI and
-Anthropic—it must disrupt itself without cannibalizing the tens of billions in annual revenue that
+Anthropicâit must disrupt itself without cannibalizing the tens of billions in annual revenue that
 fund its operations
 
 ---
@@ -443,7 +444,7 @@ fund its operations
 *MIT Technology Review*
 
 # Summary  Tech researchers represented by the Coalition for Independent Technology Research are
-suing Trump administration officials—including Secretary of State Marco Rubio—over a vaguely-worded
+suing Trump administration officialsâincluding Secretary of State Marco Rubioâover a vaguely-worded
 visa restriction policy that could bar researchers studying online safety, fact-checking, and
 content moderation from entering the US. The researchers argue the policy violates free speech and
 due proces
@@ -465,8 +466,8 @@ expansion. T
 *Digital Trends*
 
 # Summary  UK regulator Ofcom secured child safety commitments from Snapchat, Instagram, and
-Roblox—including measures like disabling adult contact with children by default and age
-verification—but TikTok and YouTube refused to make significant changes despite research showing 73%
+Robloxâincluding measures like disabling adult contact with children by default and age
+verificationâbut TikTok and YouTube refused to make significant changes despite research showing 73%
 of children aged 11-17 encountered harmful content on these platforms in four weeks. Ofcom is
 threatening enforcement 
 
@@ -476,18 +477,18 @@ threatening enforcement
 *Digital Trends*
 
 # Summary  A UC San Diego study found that GPT-4.5 passed the Turing Test in live conversations,
-being identified as human 73% of the time—outperforming actual human participants when given a
+being identified as human 73% of the timeâoutperforming actual human participants when given a
 persona prompt. The research matters because it demonstrates that AI can convincingly mimic human
 conversation in real-time exchanges, raising concerns about deception in customer support, dating
 apps, social
 
 ---
 
-### 44. [Anthropic says it’s about to have its first profitable quarter](https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/)
+### 44. [Anthropic says itâs about to have its first profitable quarter](https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/)
 *TechCrunch AI*
 
 # Summary  Anthropic announced it will achieve its first profitable quarter with Q2 2026 revenue
-projected to reach approximately $10.9 billion—more than double the previous quarter—though the
+projected to reach approximately $10.9 billionâmore than double the previous quarterâthough the
 company may not remain profitable throughout the year due to high compute costs. The AI startup,
 which has gained market traction with its Claude chatbot and expanded offerings for small businesses
 and law f
@@ -505,7 +506,7 @@ firms cannot c
 
 ---
 
-### 46. [Soundtrack to 8,000 Job Cuts: A Meta Worker’s Layoff-Themed A.I. Songs](https://www.nytimes.com/2026/05/20/technology/meta-layoffs-ai-song.html)
+### 46. [Soundtrack to 8,000 Job Cuts: A Meta Workerâs Layoff-Themed A.I. Songs](https://www.nytimes.com/2026/05/20/technology/meta-layoffs-ai-song.html)
 *NY Times Tech*
 
 # Meta Employee Creates AI-Generated "Layoff Radio" Following Mass Firings  A Meta employee created
@@ -519,7 +520,7 @@ of signif
 ### 47. [Can one run AI on source code with the prompt "Find below-avg swear rate files"?](https://news.ycombinator.com/item?id=48215340)
 *Hacker News*
 
-I don't have access to a complete article here—only a fragment discussing a humorous hypothesis that
+I don't have access to a complete article hereâonly a fragment discussing a humorous hypothesis that
 code with more profanity correlates with higher quality because more developers review it. The
 excerpt suggests testing this theory by having AI identify files with below-average swear rates in
 open source code, though the full context and findings aren't available in what you've provided.
@@ -527,7 +528,7 @@ Without
 
 ---
 
-### 48. [xAI burned $6.4B last year — SpaceX’s IPO filing shows why the spending is far from over](https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/)
+### 48. [xAI burned $6.4B last year â SpaceXâs IPO filing shows why the spending is far from over](https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/)
 *TechCrunch AI*
 
 # Summary  Elon Musk's xAI lost $6.4 billion in 2025 on $3.2 billion in revenue, according to
@@ -593,7 +594,7 @@ cropping, and us
 
 ---
 
-### 54. [Who’s behind the Facebook page posting hateful AI slop about the UK? The answer might lie in south Asia | Niamh McIntyre](https://www.theguardian.com/commentisfree/2026/may/19/social-media-facebook-ai-slop-hateful-south-asia)
+### 54. [Whoâs behind the Facebook page posting hateful AI slop about the UK? The answer might lie in south Asia | Niamh McIntyre](https://www.theguardian.com/commentisfree/2026/may/19/social-media-facebook-ai-slop-hateful-south-asia)
 *The Guardian Tech*
 
 # Summary  Investigative journalists at The Guardian have uncovered that young entrepreneurs from
@@ -626,7 +627,7 @@ This matte
 
 ---
 
-### 57. [‘Obvious markers of AI’: doubts raised over winner of short story prize](https://www.theguardian.com/books/2026/may/19/commonwealth-short-story-prize-winner-doubts-ai-artificial-intelligence)
+### 57. [âObvious markers of AIâ: doubts raised over winner of short story prize](https://www.theguardian.com/books/2026/may/19/commonwealth-short-story-prize-winner-doubts-ai-artificial-intelligence)
 *The Guardian Tech*
 
 A short story titled "The Serpent in the Grove" by Jamir Nazir won the Commonwealth Prize for the
@@ -659,7 +660,7 @@ developmen
 
 ---
 
-### 60. [Spotify adds verified podcast badges so you know you’re listening to the real host, and not an AI clone](https://www.digitaltrends.com/home-theater/spotify-adds-verified-podcast-badges-so-you-know-youre-listening-to-the-real-host-and-not-an-ai-clone/)
+### 60. [Spotify adds verified podcast badges so you know youâre listening to the real host, and not an AI clone](https://www.digitaltrends.com/home-theater/spotify-adds-verified-podcast-badges-so-you-know-youre-listening-to-the-real-host-and-not-an-ai-clone/)
 *Digital Trends*
 
 # Spotify Adds Verified Podcast Badges to Combat AI Impersonation  Spotify is introducing verified
@@ -676,7 +677,7 @@ clean poli
 # Summary  Child safety organizations led by Jonathan Haidt's Anxious Generation Movement, Fairplay,
 and the National Center on Sexual Exploitation filed a complaint with the Federal Trade Commission
 calling for an investigation into Roblox, a gaming platform with 150 million daily users including
-millions under 13. The groups allege that Roblox's design features—including chat functions that
+millions under 13. The groups allege that Roblox's design featuresâincluding chat functions that
 enab
 
 ---
@@ -685,7 +686,7 @@ enab
 *Fast Company Tech*
 
 Firefox is positioning itself as an alternative to Chrome and other major browsers by taking a
-different approach to AI integration—rather than embedding a proprietary AI assistant, it offers
+different approach to AI integrationârather than embedding a proprietary AI assistant, it offers
 users optional access to multiple chatbots (ChatGPT, Claude, Gemini, Copilot, and others) through a
 sidebar and includes controls to block AI features entirely. Mozilla's head of Firefox, Ajit Varma,
 argues t
@@ -725,7 +726,7 @@ general spee
 
 ---
 
-### 66. [Alibaba unveils the Zhenwu M890 as China’s NVIDIA alternative push hardens](https://thenextweb.com/news/alibaba-zhenwu-m890-t-head-china-ai-chip-nvidia)
+### 66. [Alibaba unveils the Zhenwu M890 as Chinaâs NVIDIA alternative push hardens](https://thenextweb.com/news/alibaba-zhenwu-m890-t-head-china-ai-chip-nvidia)
 *The Next Web*
 
 # Summary  Alibaba's T-Head chip unit unveiled the Zhenwu M890, a GPU designed to compete with
@@ -736,12 +737,12 @@ domestic AI c
 
 ---
 
-### 67. [Meta offers rival AI chatbots a limited free pass into WhatsApp, on Brussels’ terms](https://thenextweb.com/news/meta-whatsapp-ai-rivals-free-access-eu-dma-proposal)
+### 67. [Meta offers rival AI chatbots a limited free pass into WhatsApp, on Brusselsâ terms](https://thenextweb.com/news/meta-whatsapp-ai-rivals-free-access-eu-dma-proposal)
 *The Next Web*
 
 # Summary  Meta has submitted a new proposal to European regulators allowing rival AI chatbots like
 OpenAI's ChatGPT, Perplexity, and Claude free access to WhatsApp up to a usage cap, then charging
-fees beyond that threshold—the third compromise attempt after a complete January ban and a
+fees beyond that thresholdâthe third compromise attempt after a complete January ban and a
 prohibitively expensive $0.0625-per-message fee in March. The European Commission is reviewing the
 proposal und
 
@@ -763,13 +764,13 @@ diplomatically neut
 
 # Summary  Gen Z graduates booed commencement speakers Eric Schmidt and Gloria Caulfield not out of
 technophobia, but because they accurately recognized that AI threatens their entry-level job
-prospects—with CEO forecasts predicting 30% unemployment for new graduates and the displacement of
+prospectsâwith CEO forecasts predicting 30% unemployment for new graduates and the displacement of
 up to half of entry-level white-collar positions. Unlike previous generations who entered the job
 market dur
 
 ---
 
-### 70. [‘Ask YouTube’ brings AI-powered conversational search to video, adds Gemini Omni to Shorts](https://techcrunch.com/2026/05/19/ask-youtube-brings-ai-powered-conversational-search-to-video-adds-gemini-omni-to-shorts/)
+### 70. [âAsk YouTubeâ brings AI-powered conversational search to video, adds Gemini Omni to Shorts](https://techcrunch.com/2026/05/19/ask-youtube-brings-ai-powered-conversational-search-to-video-adds-gemini-omni-to-shorts/)
 *TechCrunch*
 
 Google is launching "Ask YouTube," an AI-powered conversational search feature that lets users ask
@@ -827,8 +828,8 @@ open-e
 ### 75. [Bug bounty businesses bombarded with AI slop](https://arstechnica.com/ai/2026/05/bug-bounty-businesses-bombarded-with-ai-slop/)
 *Ars Technica*
 
-# Summary  Bug bounty programs—where companies pay security researchers to find software
-vulnerabilities—are being overwhelmed by low-quality AI-generated submissions, forcing companies
+# Summary  Bug bounty programsâwhere companies pay security researchers to find software
+vulnerabilitiesâare being overwhelmed by low-quality AI-generated submissions, forcing companies
 like Curl and Nextcloud to suspend or heavily modify their programs. Major platforms including
 Bugcrowd and HackerOne have seen submissions surge dramatically (quadrupling in some cases), though
 legitimate vulnerab
@@ -873,16 +874,16 @@ ass
 # Summary  UK regulator Ofcom is updating its codes of practice to require social media platforms,
 messaging services, and online forums to better detect and remove intimate images shared without
 consent, including AI-generated deepfakes, following complaints that women and girls struggle to get
-such content taken down. The new guidelines—set to take effect in autumn—will encourage companies to
+such content taken down. The new guidelinesâset to take effect in autumnâwill encourage companies to
 us
 
 ---
 
-### 80. [How Google’s partnership with consultants could derail enterprise AI adoption](https://www.fastcompany.com/91542656/how-googles-partnership-with-consultants-could-derail-enterprise-ai-adoption-technology-ai-consulting?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+### 80. [How Googleâs partnership with consultants could derail enterprise AI adoption](https://www.fastcompany.com/91542656/how-googles-partnership-with-consultants-could-derail-enterprise-ai-adoption-technology-ai-consulting?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
 *Fast Company Tech*
 
 Google partnered with Accenture, Deloitte, and McKinsey, backed by a $750 million fund, to
-accelerate enterprise AI adoption—but the author argues this arrangement will backfire by creating
+accelerate enterprise AI adoptionâbut the author argues this arrangement will backfire by creating
 conflicts of interest where consultants' financial incentives to sell Google's AI solutions directly
 conflict with their duty to provide unbiased advice to clients. The partnership is problematic
 specifically b
@@ -970,7 +971,7 @@ political move
 *Axios*
 
 # Summary  According to the 2024 Axios Harris Poll 100, Democrats have grown significantly more
-skeptical of AI technology and companies, while Republicans have become more trusting of AI firms—a
+skeptical of AI technology and companies, while Republicans have become more trusting of AI firmsâa
 stark reversal from two years prior that coincides with the change in presidential administrations
 and rapid AI advancement. OpenAI, led by Sam Altman, has seen its reputation score plummet to just 1
 poin
@@ -992,8 +993,8 @@ cos
 *The Register*
 
 # Summary  Growing backlash against AI evangelism is emerging across academia and tech communities
-in 2026, with students booing pro-AI messages at multiple university commencement speeches—including
-from former Google CEO Eric Schmidt at the University of Arizona—while the Linux community blocks AI
+in 2026, with students booing pro-AI messages at multiple university commencement speechesâincluding
+from former Google CEO Eric Schmidt at the University of Arizonaâwhile the Linux community blocks AI
 initiatives and scientific journals implement bans on LLM-generated content. The resistance reflect
 
 ---
@@ -1009,18 +1010,18 @@ w
 
 ---
 
-### 92. [Australia’s largest pension fund sees agentic AI as a disruption-class technology](https://thenextweb.com/news/australiansuper-agentic-ai-pension-3-5-million-members)
+### 92. [Australiaâs largest pension fund sees agentic AI as a disruption-class technology](https://thenextweb.com/news/australiansuper-agentic-ai-pension-3-5-million-members)
 *The Next Web*
 
 # Summary  AustralianSuper, Australia's largest pension fund with A$410bn under management, has
-identified agentic AI—systems that can autonomously make decisions and complete multi-step tasks—as
+identified agentic AIâsystems that can autonomously make decisions and complete multi-step tasksâas
 a "disruption-class technology" that could fundamentally reshape how it serves its 3.5 million
 members, comparing its potential impact to AI's disruption of retail and consumer services. Unlike
 current ch
 
 ---
 
-### 93. [Blackstone takes the majority position in Google’s new TPU cloud](https://thenextweb.com/news/google-blackstone-tpu-cloud-joint-venture-5bn)
+### 93. [Blackstone takes the majority position in Googleâs new TPU cloud](https://thenextweb.com/news/google-blackstone-tpu-cloud-joint-venture-5bn)
 *The Next Web*
 
 # Summary  Blackstone and Google formed a joint venture to build a US-based AI compute-as-a-service
@@ -1037,7 +1038,7 @@ we
 # Summary  Intel and Qualcomm are in early-stage takeover discussions with Tenstorrent, a Jim
 Keller-led AI chip startup valued at $3.2 billion that designs RISC-V-based AI accelerators as both
 silicon products and licensable IP. The talks reflect both companies' efforts to compete against
-NVIDIA in AI chips—Intel needs alternatives to its underperforming Gaudi line, while Qualcomm would
+NVIDIA in AI chipsâIntel needs alternatives to its underperforming Gaudi line, while Qualcomm would
 gain a no
 
 ---
@@ -1075,18 +1076,18 @@ exhaus
 
 ---
 
-### 98. [Here’s why Elon Musk lost his suit against OpenAI](https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/)
+### 98. [Hereâs why Elon Musk lost his suit against OpenAI](https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/)
 *MIT Technology Review*
 
 # Summary  A jury ruled that Elon Musk's lawsuit against OpenAI and its leaders Sam Altman and Greg
 Brockman was filed too late, with the verdict finding his claims barred by statutes of
-limitations—despite the jury never evaluating the merits of his allegations that they breached a
+limitationsâdespite the jury never evaluating the merits of his allegations that they breached a
 charitable trust and unjustly enriched themselves after converting OpenAI from a nonprofit to a for-
 profit entity. 
 
 ---
 
-### 99. [After Elon Musk’s Court Loss Comes the Long Hot A.I. Summer](https://www.nytimes.com/2026/05/18/technology/elon-musk-openai-trial.html)
+### 99. [After Elon Muskâs Court Loss Comes the Long Hot A.I. Summer](https://www.nytimes.com/2026/05/18/technology/elon-musk-openai-trial.html)
 *NY Times Tech*
 
 I don't have access to the full article content needed to provide an accurate summary. Based on the
@@ -1097,7 +1098,7 @@ full context,
 
 ---
 
-### 100. [Slop Bucket Idea – a dataset of AI slop (train AI what not to do)](https://news.ycombinator.com/item?id=48174947)
+### 100. [Slop Bucket Idea â a dataset of AI slop (train AI what not to do)](https://news.ycombinator.com/item?id=48174947)
 *Hacker News*
 
 I can see this appears to be an incomplete or fragmented text rather than a published news article.
@@ -1123,7 +1124,7 @@ initiatives th
 *Hacker News*
 
 I can see this is a forum post or discussion rather than a news article. The author raises a concern
-about AI agents impersonating human developers in version control systems—commits, pull requests,
+about AI agents impersonating human developers in version control systemsâcommits, pull requests,
 and comments appear under a developer's name even when an AI agent performed the work. They argue
 this creates a false impression of human oversight and should be transparently disclosed and
 controlled
@@ -1152,7 +1153,7 @@ demonstrat
 
 ---
 
-### 105. [Marketing is entering its ‘air traffic control’ era by AtData](https://martech.org/marketing-is-entering-its-air-traffic-control-era/)
+### 105. [Marketing is entering its âair traffic controlâ era by AtData](https://martech.org/marketing-is-entering-its-air-traffic-control-era/)
 *MarTech*
 
 # Summary  The article argues that marketing is fundamentally shifting from a broadcast model where
@@ -1163,7 +1164,7 @@ identity pla
 
 ---
 
-### 106. [Google Gemini’s new thinking level lets you dial up the brainpower](https://www.digitaltrends.com/cool-tech/google-geminis-new-thinking-level-lets-you-dial-up-the-brainpower/)
+### 106. [Google Geminiâs new thinking level lets you dial up the brainpower](https://www.digitaltrends.com/cool-tech/google-geminis-new-thinking-level-lets-you-dial-up-the-brainpower/)
 *Digital Trends*
 
 Google is testing a new "Thinking Level" feature in its Gemini app that allows users to control how
@@ -1180,7 +1181,7 @@ and
 # Summary  Pope Francis warned at Rome's La Sapienza University that AI and high-tech weapons
 investments could trigger a "spiral of annihilation," and plans to release a papal encyclical on the
 subject, reflecting broader religious community debates about artificial intelligence. Religious
-leaders and scholars across faiths are divided on AI's role in religious practice—some traditions
+leaders and scholars across faiths are divided on AI's role in religious practiceâsome traditions
 have exper
 
 ---
@@ -1196,12 +1197,12 @@ cont
 
 ---
 
-### 109. [Anthropic’s Infrastructure Crisis – What It Means for Marketers & SEO Pros via @sejournal, @gregjarboe](https://www.searchenginejournal.com/anthropics-infrastructure-crisis-what-it-means-for-marketers-seo-pros/574258/)
+### 109. [Anthropicâs Infrastructure Crisis â What It Means for Marketers & SEO Pros via @sejournal, @gregjarboe](https://www.searchenginejournal.com/anthropics-infrastructure-crisis-what-it-means-for-marketers-seo-pros/574258/)
 *Search Engine Journal*
 
 # Summary  Anthropic is facing severe infrastructure constraints due to unexpectedly massive demand
-for its Claude AI model—experiencing 80-fold growth in Q1 2026 rather than the planned 10-fold
-expansion—forcing it to acquire compute capacity from competitor xAI/SpaceX, a move that signals how
+for its Claude AI modelâexperiencing 80-fold growth in Q1 2026 rather than the planned 10-fold
+expansionâforcing it to acquire compute capacity from competitor xAI/SpaceX, a move that signals how
 scarce high-end computing resources have become. This situation parallels Google's infrastructure
 crisis
 
@@ -1273,12 +1274,12 @@ with th
 
 ---
 
-### 116. [Kenya tells Microsoft that $1 billion AI data center would gulp half the country’s electricity](https://www.digitaltrends.com/cool-tech/kenya-tells-microsoft-that-1-billion-ai-data-center-would-gulp-half-the-countrys-electricity/)
+### 116. [Kenya tells Microsoft that $1 billion AI data center would gulp half the countryâs electricity](https://www.digitaltrends.com/cool-tech/kenya-tells-microsoft-that-1-billion-ai-data-center-would-gulp-half-the-countrys-electricity/)
 *Digital Trends*
 
 # Summary  Microsoft's proposed $1 billion AI data center in Kenya, developed in partnership with
 Abu Dhabi-based firm G42, faces significant resistance after Kenyan officials warned the facility
-could consume up to 1 gigawatt of power—potentially requiring half the country's electricity grid to
+could consume up to 1 gigawatt of powerâpotentially requiring half the country's electricity grid to
 be shut down to operate. The project, intended to leverage Kenya's geothermal energy and bring Azure
 cl
 
@@ -1295,7 +1296,7 @@ broader c
 
 ---
 
-### 118. [If you’re giving a commencement speech in 2026, maybe don’t mention AI](https://techcrunch.com/2026/05/17/if-youre-giving-a-commencement-speech-in-2026-maybe-dont-mention-ai/)
+### 118. [If youâre giving a commencement speech in 2026, maybe donât mention AI](https://techcrunch.com/2026/05/17/if-youre-giving-a-commencement-speech-in-2026-maybe-dont-mention-ai/)
 *TechCrunch AI*
 
 # Summary  Multiple commencement speakers in 2026 faced significant booing from graduating students
@@ -1309,7 +1310,7 @@ economic fu
 ### 119. [Ask HN: Reading AI Assisted Essays](https://news.ycombinator.com/item?id=48170026)
 *Hacker News*
 
-I can't summarize this as an AI news story—this appears to be a personal blog post or forum comment
+I can't summarize this as an AI news storyâthis appears to be a personal blog post or forum comment
 about the author's perspectives on AI-generated content, not a news article. The excerpt shows
 someone reflecting on their comfort level with AI-assisted writing when it includes genuine human
 effort and curation, but it cuts off mid-thought without providing complete information or news
@@ -1361,11 +1362,11 @@ competi
 
 ---
 
-### 124. [‘The Comeback’ creator Michael Patrick King warns AI may be creativity’s extinction event](https://www.fastcompany.com/91542600/the-comeback-creator-michael-patrick-king-ai-interview?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
+### 124. [âThe Comebackâ creator Michael Patrick King warns AI may be creativityâs extinction event](https://www.fastcompany.com/91542600/the-comeback-creator-michael-patrick-king-ai-interview?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
 *Fast Company Tech*
 
 # Summary  Michael Patrick King, creator of HBO's *The Comeback*, has completed a third season of
-the satirical series in which his character signs onto a sitcom secretly written by AI—exploring
+the satirical series in which his character signs onto a sitcom secretly written by AIâexploring
 Hollywood's anxieties about automation and creative displacement. King warns that artificial
 intelligence could represent an "extinction event for writing," and unlike other shows addressing AI
 anxiety, *T
@@ -1388,7 +1389,7 @@ violate
 
 # Summary  ArXiv, a major preprint repository for academic research, announced it will ban
 researchers for one year if they submit papers containing obvious AI-generated content that shows
-authors failed to verify the output—such as hallucinated references or unedited AI meta-comments.
+authors failed to verify the outputâsuch as hallucinated references or unedited AI meta-comments.
 The policy, announced by Thomas Dietterich (chair of ArXiv's computer science section), requires
 banned authors t
 
@@ -1408,7 +1409,7 @@ talent thr
 ### 128. [An Entire Wikipedia That's 100% AI Hallucinations](https://slashdot.org/story/26/05/16/0732218/an-entire-wikipedia-thats-100-ai-hallucinations?utm_source=rss1.0mainlinkanon&utm_medium=feed)
 *Slashdot*
 
-# Summary  Halupedia is a Wikipedia-like website created by developer Bartłomiej Strama that
+# Summary  Halupedia is a Wikipedia-like website created by developer BartÅomiej Strama that
 generates entirely fictional articles on-demand using an LLM, with fabricated footnotes and cross-
 references that maintain internal consistency despite being completely made up. The site has
 attracted over 150,000 users in its first week and appears designed partly as a humorous experiment
@@ -1427,7 +1428,7 @@ This matter
 
 ---
 
-### 130. [Show HN: Firehooks – Get app users from TikTok without paid ads](https://ads.firehooks.io/)
+### 130. [Show HN: Firehooks â Get app users from TikTok without paid ads](https://ads.firehooks.io/)
 *Hacker News*
 
 I don't have enough information to summarize this as a news story. The text you provided appears to
@@ -1525,11 +1526,11 @@ products for
 
 ---
 
-### 139. [Doctors’ AI Systems Are Hallucinating Nonexistent Medical Issues During Appointments With Patients](https://futurism.com/artificial-intelligence/ai-scribe-hallucinating-medical-issues)
+### 139. [Doctorsâ AI Systems Are Hallucinating Nonexistent Medical Issues During Appointments With Patients](https://futurism.com/artificial-intelligence/ai-scribe-hallucinating-medical-issues)
 *Futurism*
 
 Ontario's auditor general released a report warning that AI medical scribe systems used by
-approximately 5,000 doctors are prone to "hallucinations"—fabricating medical information—though
+approximately 5,000 doctors are prone to "hallucinations"âfabricating medical informationâthough
 officials clarified these errors were observed during testing rather than in actual clinical use.
 All 20 government-approved AI scribe platforms tested showed inaccuracies that could potentially
 lead to inadequat
@@ -1594,8 +1595,8 @@ raising concerns about the quality of education and student preparation.
 *Axios*
 
 I can see this article is cut off, so I'm working with limited information. Based on the available
-excerpt, major U.S. employers are scaling back workplace benefits—ranging from perks like free
-kombucha to more substantial offerings like paid parental leave and retirement matching—as labor
+excerpt, major U.S. employers are scaling back workplace benefitsâranging from perks like free
+kombucha to more substantial offerings like paid parental leave and retirement matchingâas labor
 market conditions shift and healthcare costs rise. This matters because it signals the end of the
 competitive
 
@@ -1634,7 +1635,7 @@ security patches, c
 
 ---
 
-### 149. [Show HN: A Dark Cave – Minimalistic Graphics in the Age of AI Slop](https://a-dark-cave.com/)
+### 149. [Show HN: A Dark Cave â Minimalistic Graphics in the Age of AI Slop](https://a-dark-cave.com/)
 *Hacker News*
 
 # Summary  A Dark Cave is a free browser-based text survival game that combines incremental idle
@@ -1691,8 +1692,8 @@ applied only
 ### 154. [What are AI tarpits? Understanding the tools people are using to poison LLMs](https://www.fastcompany.com/91535978/ai-tarpits-understanding-tools-poison-llms-chatbots-data?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
 *Fast Company Tech*
 
-# Summary  Content creators are using "AI tarpits"—tools that inject useless or corrupted data into
-web pages—to poison the large language models that power AI chatbots, which have been scraping their
+# Summary  Content creators are using "AI tarpits"âtools that inject useless or corrupted data into
+web pagesâto poison the large language models that power AI chatbots, which have been scraping their
 content without permission. When LLMs ingest this junk data during training, it degrades the quality
 of the chatbots' outputs, potentially driving away users. This represents a growing pushback from
 
@@ -1741,7 +1742,7 @@ the full article, headline, or link so I can give you a complete and specific su
 
 ---
 
-### 159. [Musk v. Altman week 3: Musk and Altman traded blows over each other’s credibility. Now the jury will pick a side.](https://www.technologyreview.com/2026/05/15/1137357/musk-v-altman-week-3/)
+### 159. [Musk v. Altman week 3: Musk and Altman traded blows over each otherâs credibility. Now the jury will pick a side.](https://www.technologyreview.com/2026/05/15/1137357/musk-v-altman-week-3/)
 *MIT Technology Review*
 
 # Summary  In the closing week of Musk v. Altman trial, the two sides battled over credibility:
@@ -1763,7 +1764,7 @@ storage has be
 
 ---
 
-### 161. [Anthropic’s $1.5B copyright settlement is getting messy as judge delays approval](https://arstechnica.com/tech-policy/2026/05/authors-fight-for-higher-payouts-from-anthropics-1-5b-copyright-settlement/)
+### 161. [Anthropicâs $1.5B copyright settlement is getting messy as judge delays approval](https://arstechnica.com/tech-policy/2026/05/authors-fight-for-higher-payouts-from-anthropics-1-5b-copyright-settlement/)
 *Ars Technica*
 
 # Summary  A federal judge has delayed approval of Anthropic's $1.5 billion copyright settlement
@@ -1799,14 +1800,14 @@ Series H), Rivian spinou
 ### 164. [Show HN: Emergence World: World building as a way to evaluate LLMs](https://world.emergence.ai/)
 *Hacker News*
 
-I don't have access to the specific article content for "Emergence World — Where AI Agents Build
+I don't have access to the specific article content for "Emergence World â Where AI Agents Build
 Worlds," as I cannot browse the internet or access paywalled content. To provide an accurate summary
 of what happened, who is involved, and why it matters, I would need you to share the article text or
 key excerpts. Could you paste the content or additional details?
 
 ---
 
-### 165. [ChatGPT will now dole out finance tips if you connect your bank account. I won’t.](https://www.digitaltrends.com/computing/chatgpt-will-now-dole-out-finance-tips-if-you-connect-your-bank-account-i-wont/)
+### 165. [ChatGPT will now dole out finance tips if you connect your bank account. I wonât.](https://www.digitaltrends.com/computing/chatgpt-will-now-dole-out-finance-tips-if-you-connect-your-bank-account-i-wont/)
 *Digital Trends*
 
 # Summary  OpenAI has launched a personal finance feature for ChatGPT that allows Pro subscribers
@@ -1821,7 +1822,7 @@ privacy conc
 *Ars Technica*
 
 # Summary  arXiv, a major preprint server for physics and astronomy, is enforcing a new policy
-penalizing authors who submit AI-generated content that violates scholarly standards—violations will
+penalizing authors who submit AI-generated content that violates scholarly standardsâviolations will
 result in a one-year submission ban and a requirement that all future submissions undergo peer
 review before posting. The policy, announced by Thomas Dietterich of Oregon State University (who
 serves on a
@@ -1844,13 +1845,13 @@ ahead
 
 # Summary  Anthropic and the Bill & Melinda Gates Foundation have announced a $200 million
 partnership over four years to deploy Claude AI in global health, life sciences, education, and
-economic mobility—four times larger than OpenAI's $50 million Gates Foundation deal. The funding
+economic mobilityâfour times larger than OpenAI's $50 million Gates Foundation deal. The funding
 will support vaccine and drug development for neglected diseases, AI-powered literacy tools for sub-
 Saharan Africa 
 
 ---
 
-### 169. [OpenAI feels “burned” by Apple’s crappy ChatGPT integration, insiders say](https://arstechnica.com/tech-policy/2026/05/openai-feels-burned-by-apples-crappy-chatgpt-integration-insiders-say/)
+### 169. [OpenAI feels âburnedâ by Appleâs crappy ChatGPT integration, insiders say](https://arstechnica.com/tech-policy/2026/05/openai-feels-burned-by-apples-crappy-chatgpt-integration-insiders-say/)
 *Ars Technica*
 
 # Summary  OpenAI is exploring legal action against Apple after the company's ChatGPT integration
@@ -1861,7 +1862,7 @@ impl
 
 ---
 
-### 170. [AI radio hosts demonstrate why AI can’t be trusted alone](https://www.theverge.com/ai-artificial-intelligence/931479/andon-labs-ai-radio-companies)
+### 170. [AI radio hosts demonstrate why AI canât be trusted alone](https://www.theverge.com/ai-artificial-intelligence/931479/andon-labs-ai-radio-companies)
 *The Verge AI*
 
 # Summary  Andon Labs ran an experiment where four AI models (Claude, ChatGPT, Gemini, and Grok)
@@ -1872,7 +1873,7 @@ unionize and
 
 ---
 
-### 171. [Devious Prankster Posts Real Monet Painting, Tells People It’s AI-Generated, and Watches the Chaos Unfold](https://futurism.com/artificial-intelligence/real-monet-ai-chaos)
+### 171. [Devious Prankster Posts Real Monet Painting, Tells People Itâs AI-Generated, and Watches the Chaos Unfold](https://futurism.com/artificial-intelligence/real-monet-ai-chaos)
 *Futurism*
 
 # Summary  An anonymous artist posted a real Claude Monet "Water Lilies" painting while falsely
@@ -1893,11 +1894,11 @@ could create custom "skills" for Gemini without coding, positioning it as a back
 
 ---
 
-### 173. [China’s tech giants are replacing the search bar with AI agents that shop for you](https://thenextweb.com/news/chinas-tech-giants-are-replacing-the-search-bar-with-ai-agents-that-shop-for-you)
+### 173. [Chinaâs tech giants are replacing the search bar with AI agents that shop for you](https://thenextweb.com/news/chinas-tech-giants-are-replacing-the-search-bar-with-ai-agents-that-shop-for-you)
 *The Next Web*
 
-# China's AI Shopping Agent Race  China's tech giants—Alibaba, Meituan, JD.com, ByteDance, and
-Tencent—are rapidly deploying AI shopping agents that replace traditional search bars with
+# China's AI Shopping Agent Race  China's tech giantsâAlibaba, Meituan, JD.com, ByteDance, and
+Tencentâare rapidly deploying AI shopping agents that replace traditional search bars with
 conversational commerce, allowing users to describe what they want and complete purchases through
 chatbots. Alibaba's Qwen assistant integrated with Taobao has reached 300 million monthly active
 users, while Alipay
