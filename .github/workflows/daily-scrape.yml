@@ -2,7 +2,7 @@ name: Daily Slop Report Scrape
 on:
   schedule:
     # Run at 08:00 UTC every day
-    - cron: "0 8 * * *"
+    - cron: "0 5 * * *"
   # Allow manual triggering from the Actions tab
   workflow_dispatch:
 
@@ -85,6 +85,6 @@ jobs:
         run: |
           gh api repos/${{ github.repository }}/issues \
             --method POST \
-            -f title="⚠️ Daily scrape failed — $(date -u +%Y-%m-%d)" \
+            -f title="â ï¸ Daily scrape failed â $(date -u +%Y-%m-%d)" \
             -f body="The daily scrape workflow failed. [View run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" \
             -f 'labels[]=bug' || true
