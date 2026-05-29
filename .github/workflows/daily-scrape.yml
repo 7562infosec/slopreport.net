@@ -85,6 +85,6 @@ jobs:
         run: |
           gh api repos/${{ github.repository }}/issues \
             --method POST \
-            -f title="â ï¸ Daily scrape failed â $(date -u +%Y-%m-%d)" \
+            -f title="⚠️ Daily scrape failed — $(date -u +%Y-%m-%d)" \
             -f body="The daily scrape workflow failed. [View run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" \
             -f 'labels[]=bug' || true
