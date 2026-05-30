@@ -539,7 +539,8 @@ def write_post(content: str, today: datetime) -> Path:
 # ---------------------------------------------------------------------------
 
 def main():
-    today = datetime.now(timezone.utc)
+    backfill_date = os.environ.get('BACKFILL_DATE', '').strip()
+    today = datetime.strptime(backfill_date, '%Y-%m-%d').replace(tzinfo=timezone.utc) if backfill_date else datetime.now(timezone.utc)
     log.info(f"Slop Report scraper starting  -  {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
     # Load cross-day URL cache for deduplication
