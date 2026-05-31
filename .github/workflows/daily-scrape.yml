@@ -14,6 +14,10 @@ on:
 permissions:
   contents: write # Required to commit and push the new post
 
+concurrency:
+  group: slopreport-scrape
+  cancel-in-progress: false
+
 jobs:
   scrape-and-publish:
     runs-on: ubuntu-latest
