@@ -40,6 +40,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-archives
+  - jekyll-sitemap
 
 jekyll-archives:
   enabled:
@@ -62,6 +63,13 @@ collections:
     sort_by: order
 
 defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      image:
+        path: /assets/img/avatar.png
+        alt: The Slop Report
   - scope:
       path: "_tabs"
       type: tabs
