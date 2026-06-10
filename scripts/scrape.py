@@ -482,7 +482,7 @@ def format_story_block(idx: int, story: dict) -> str:
     source = story["source"]
     link = story["link"]
     summary = story["summary"]
-    date_str = story["date"].strftime("%b %-d") if story["date"] else ""
+    date_str = (story["date"].strftime("%b ") + str(story["date"].day)) if story["date"] else ""
     block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or '#'})\n"
     block += f"*{source}*"
     if date_str:
@@ -495,13 +495,14 @@ def format_story_block(idx: int, story: dict) -> str:
 
 
 def generate_post(stories: list[dict], today: datetime) -> str:
-    date_str = today.strftime("%B %-d, %Y")
+    date_str = today.strftime("%B ") + str(today.day) + today.strftime(", %Y")
     date_iso = today.strftime("%Y-%m-%d")
     sources_list = sorted(set(s["source"] for s in stories))
     header = f"""---
 layout: post
 title: "The Slop Report  -  {date_str}"
 date: {date_iso}
+description: "Your daily digest of AI-generated content, deepfakes, and synthetic media news for {date_str}."
 categories: daily-roundup
 ---
 
