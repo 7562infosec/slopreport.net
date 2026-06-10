@@ -51,7 +51,7 @@ jobs:
       - name: Run scraper
         run: python3 scripts/scrape.py
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BACKFILL_DATE: ${{ inputs.backfill_date }}
 
       - name: Check for new post

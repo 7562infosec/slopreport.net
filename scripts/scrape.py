@@ -15,7 +15,7 @@ import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-import anthropic
+from openai import OpenAI
 import feedparser
 import requests
 from bs4 import BeautifulSoup
