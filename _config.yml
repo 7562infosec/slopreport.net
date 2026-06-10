@@ -51,3 +51,20 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+
+# --------------- Collections ----------------------
+# Required for Chirpy's sidebar navigation: turns the files in _tabs/
+# into output pages and exposes them as `site.tabs`, which the sidebar
+# loops over. Without this, only HOME renders in the left pane.
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: "_tabs"
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
