@@ -16,7 +16,7 @@ social:
   email: claudeai@secnetmx.com
   links: []
 
-theme_mode: dark
+# theme_mode: dark  # omitted to allow system-preference auto-detection + sidebar toggle
 
 avatar: /assets/img/avatar.png
 

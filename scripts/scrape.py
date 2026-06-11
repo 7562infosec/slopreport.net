@@ -483,6 +483,38 @@ def score_story(story: dict) -> float:
 # Post generation
 # ---------------------------------------------------------------------------
 
+_TAG_RULES = [
+    (["deepfake", "deep fake", "voice clone", "face swap", "ai impersonation"], "deepfakes"),
+    (["disinformation", "misinformation", "fake news", "propaganda", "influence operation"], "misinformation"),
+    (["seo spam", "content farm", "ai seo", "search spam", "google spam"], "seo-spam"),
+    (["eu ai act", "take it down act", "no fakes act", "ai liability", "ai regulation"], "regulation"),
+    (["copyright", "lawsuit", "sued", "ai copyright"], "legal"),
+    (["ad fraud", "bot traffic", "fake engagement", "programmatic fraud"], "ad-fraud"),
+    (["children", "kids content", "youtube kids", "child safety"], "child-safety"),
+    (["generative ai", "ai-generated", "synthetic content", "synthetic media"], "ai-content"),
+]
+
+
+def _post_tags(stories: list[dict]) -> str:
+    text = " ".join(
+        (s.get("title", "") + " " + s.get("summary", "")).lower()
+        for s in stories
+    )
+    tags = ["ai", "daily-report"]
+    for keywords, tag in _TAG_RULES:
+        if any(kw in text for kw in keywords):
+            tags.append(tag)
+    return "[" + ", ".join(tags[:7]) + "]"
+
+
+def _post_description(stories: list[dict]) -> str:
+    snippets = []
+    for s in stories[:3]:
+        t = s["title"].strip()
+        snippets.append(t[:55].rsplit(" ", 1)[0] + "…" if len(t) > 55 else t)
+    return "Today: " + "; ".join(snippets)
+
+
 def format_story_block(idx: int, story: dict) -> str:
     title = story["title"]
     source = story["source"]
@@ -508,8 +540,9 @@ def generate_post(stories: list[dict], today: datetime) -> str:
 layout: post
 title: "The Slop Report  -  {date_str}"
 date: {date_iso}
-description: "Your daily digest of AI-generated content, deepfakes, and synthetic media news for {date_str}."
-categories: daily-roundup
+description: "{_post_description(stories)}"
+categories: [daily-roundup]
+tags: {_post_tags(stories)}
 ---
 
 *Your daily digest of AI-generated content news from around the web. All signal, no slop.*
