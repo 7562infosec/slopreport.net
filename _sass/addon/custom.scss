@@ -1,0 +1,36 @@
+// Cross-site sidebar link — uses inherit + opacity so it adapts to
+// both dark and light modes without hardcoded colour values.
+
+.sidebar-crosslink {
+  padding: 1rem 1.5rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid rgba(127, 127, 127, 0.3);
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-crosslink-btn {
+  display: inline-block;
+  color: inherit;
+  opacity: 0.85;
+  border: 1px solid rgba(127, 127, 127, 0.4);
+  padding: 0.35rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none !important;
+  }
+}
+
+.sidebar-crosslink-desc {
+  font-size: 0.72rem;
+  color: inherit;
+  opacity: 0.55;
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
+}
