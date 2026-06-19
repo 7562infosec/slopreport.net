@@ -297,12 +297,8 @@ def cross_day_deduplicate(stories: list[dict], seen_urls: dict) -> list[dict]:
 # AI summary
 # ---------------------------------------------------------------------------
 
-def get_ai_summary(url: str, fallback: str) -> str:
-    """Fetch article text and summarize with Claude Haiku. Falls back to RSS description."""
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        return fallback[:300] if fallback else ""
-
+def get_ai_summary(url: str, fallback: str, client: OpenAI) -> str:
+    """Fetch article text and summarize with GitHub Models (gpt-4o-mini). Falls back to RSS description."""
     # Try to fetch the full article text
     article_text = fallback or ""
     try:
@@ -318,30 +314,23 @@ def get_ai_summary(url: str, fallback: str) -> str:
         log.debug(f"Article fetch failed for {url}: {e}")
 
     try:
-        def _call_api():
-            c = anthropic.Anthropic(api_key=api_key)
-            return c.messages.create(
-            model="claude-haiku-4-5-20251001",
+        response = client.chat.completions.create(
+            model=os.environ.get("GITHUB_MODEL", "gpt-4o-mini"),
             max_tokens=250,
             messages=[{
                 "role": "user",
                 "content": (
-                    "In 2-3 sentences, summarize this AI news story  -  what happened, who is involved, and why it matters. If the article is behind a paywall, base your summary on the title and any available excerpt. "
+                    "In 2-3 sentences, summarize this AI news story - what happened, who is involved, and why it matters. "
+                    "If the article is behind a paywall, base your summary on the title and any available excerpt. "
                     "Be specific and factual. Do not start with 'This article'.\n\n"
                     f"{article_text}"
                 )
-            }]
+            }],
         )
-        msg = retry(_call_api, attempts=3, delay=15, label="Anthropic API")
-        return msg.content[0].text.strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        log.warning(f"Claude summary failed for {url}: {e}")
+        log.warning(f"GitHub Models summary failed for {url}: {e}")
         return fallback[:300] if fallback else ""
-
-# ---------------------------------------------------------------------------
-# Feed fetching
-# ---------------------------------------------------------------------------
-
 def fetch_feed(source: dict) -> list[dict]:
     name = source["name"]
     url = source["url"]
@@ -583,6 +572,15 @@ def main():
     today = datetime.strptime(backfill_date, '%Y-%m-%d').replace(tzinfo=timezone.utc) if backfill_date else datetime.now(timezone.utc)
     log.info(f"Slop Report scraper starting  -  {today.strftime('%Y-%m-%d %H:%M UTC')}")
 
+    # Initialize GitHub Models client (free, uses GITHUB_TOKEN from Actions)
+    github_token = os.environ.get("GITHUB_TOKEN")
+    if not github_token:
+        raise SystemExit("ERROR: GITHUB_TOKEN environment variable not set")
+    client = OpenAI(
+        base_url="https://models.inference.ai.azure.com",
+        api_key=github_token,
+    )
+
     # Load cross-day URL cache for deduplication
     seen_urls = load_seen_urls()
     log.info(f"Cross-day cache loaded: {len(seen_urls)} URLs from previous reports")
@@ -620,7 +618,7 @@ def main():
     # Generate AI summaries for selected stories
     log.info(f"Generating AI summaries for {len(selected)} stories...")
     for story in selected:
-        story["summary"] = get_ai_summary(story["link"], story["summary"])
+        story["summary"] = get_ai_summary(story["link"], story["summary"], client)
         time.sleep(0.3)  # gentle rate limiting
 
     post_content = generate_post(selected, today)
