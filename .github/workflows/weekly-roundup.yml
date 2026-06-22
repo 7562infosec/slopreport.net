@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5.6.0
@@ -72,3 +73,14 @@ jobs:
           echo "### Weekly Roundup Published" >> $GITHUB_STEP_SUMMARY
           echo "A weekly roundup was committed and pushed to main." >> $GITHUB_STEP_SUMMARY
           echo "GitHub Pages will deploy it automatically." >> $GITHUB_STEP_SUMMARY
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh api repos/${{ github.repository }}/issues \
+            --method POST \
+            -f title="⚠️ Weekly roundup failed — $(date -u +%Y-%m-%d)" \
+            -f body="The weekly roundup workflow failed. [View run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" \
+            -f 'labels[]=bug' || true
