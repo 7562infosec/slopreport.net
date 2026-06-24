@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.0"
-gem "jekyll-theme-chirpy", "~> 7.2"
+gem "jekyll-theme-chirpy", "~> 7.6"
 
 group :jekyll_plugins do
   gem "jekyll-feed"
