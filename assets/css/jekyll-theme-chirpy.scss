@@ -44,3 +44,16 @@
   margin: 0.4rem 0 0;
   line-height: 1.4;
 }
+
+/* 7562 InfoSec sidebar link — show text label */
+#sidebar a[href*="7562infosec.net"] {
+  display: flex;
+  align-items: center;
+}
+
+#sidebar a[href*="7562infosec.net"]::after {
+  content: "7562 InfoSec";
+  margin-left: 0.4em;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
