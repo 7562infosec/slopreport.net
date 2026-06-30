@@ -4,3 +4,6 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+- type: website
+  icon: "fas fa-shield-alt"
+  url: "https://7562infosec.net"
