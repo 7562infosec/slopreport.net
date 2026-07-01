@@ -47,25 +47,27 @@
 
 /* 7562 InfoSec — full-width button below the icon row */
 .sidebar-bottom a[href*="7562infosec.net"] {
-  width: 100%;
-  display: block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem !important;
+  padding: 0.45rem 1rem !important;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 6px !important;
+  height: auto !important;
   font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
 
   &::after {
     content: " 7562 InfoSec";
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.45);
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
     text-decoration: none;
   }
 }
