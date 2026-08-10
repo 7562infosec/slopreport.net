@@ -462,6 +462,22 @@ def score_story(story: dict) -> float:
     score += sum(3.0 for kw in general if kw in title)
     score += sum(1.0 for kw in general if kw in desc)
 
+    # Brand-name mentions alone are low value — they match the keyword filter
+    # but should not push generic AI news above actual slop stories.
+    # Only award brand points if a high-value or general slop term is also present.
+    brand_terms = [
+        "openai", "anthropic", "chatgpt", "claude", "gemini", "grok",
+        "copilot", "large language model", "llm", "foundation model",
+        "frontier model", "artificial intelligence", "ai model",
+        "ai system", "ai tool", "ai product", "ai company",
+    ]
+    has_slop_signal = any(kw in title or kw in desc for kw in high_value + general)
+    if not has_slop_signal:
+        # Pure brand mention with no slop angle — penalize so it doesn't crowd out real stories
+        brand_hit = any(kw in title for kw in brand_terms)
+        if brand_hit:
+            score -= 3.0
+
     # Recency bonus
     if story.get("date"):
         age_hours = (datetime.now(timezone.utc) - story["date"]).total_seconds() / 3600
@@ -529,6 +545,7 @@ def generate_post(stories: list[dict], today: datetime) -> str:
 layout: post
 title: "The Slop Report  -  {date_str}"
 date: {date_iso}
+slug: "slop-report-{date_iso}"
 description: "{_post_description(stories)}"
 categories: [daily-roundup]
 tags: {_post_tags(stories)}
