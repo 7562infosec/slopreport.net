@@ -25,16 +25,17 @@ from dateutil import parser as dateutil_parser
 # Configuration
 # ---------------------------------------------------------------------------
 
-KEYWORDS = [
+# Tier 1: Strong signal — a match alone qualifies the story.
+# These terms indicate actual AI slop, synthetic content, deepfakes,
+# misinformation, or platform/policy responses to those problems.
+STRONG_KEYWORDS = [
     # Core AI slop terms
     "ai slop", "ai-slop",
 
-    # AI-generated content  -  broad but relevant
+    # AI-generated content
     "ai-generated", "ai generated",
-    "generative ai",
     "synthetic content", "synthetic media", "synthetic video",
-    "machine-generated content",
-    "artificially generated",
+    "machine-generated content", "artificially generated",
 
     # Content quality / spam
     "content farm", "content mill", "made for advertising", "mfa site",
@@ -60,7 +61,7 @@ KEYWORDS = [
     "ai detection", "ai watermark", "content authenticity", "c2pa",
     "content provenance", "ai disclosure",
 
-    # Misinformation / disinfo (standalone terms, word-boundary matched)
+    # Misinformation / disinfo
     "disinformation", "misinformation", "fake news",
     "information pollution", "influence operation",
     "ai misinformation", "ai disinformation", "ai propaganda",
@@ -69,15 +70,20 @@ KEYWORDS = [
     "ad fraud", "programmatic fraud", "bot traffic", "bot account",
     "social media bot", "llm bot", "fake engagement",
 
-    # Regulation (specific to AI misuse/safety)
+    # Regulation specific to AI misuse
     "eu ai act", "take it down act", "no fakes act",
     "ai copyright", "ai liability", "ai fraud",
 
     # Kids / vulnerable audiences
     "youtube kids", "children's content", "kids content",
     "made for kids", "child safety",
+]
 
-    # --- Broader AI industry terms ---
+# Tier 2: Weak signal — brand names and general AI terms.
+# A match here ONLY qualifies the story if a STRONG_KEYWORD is also present
+# in the same text. This prevents generic AI news ("How to use ChatGPT")
+# from flooding the post on slow news days.
+WEAK_KEYWORDS = [
     "openai", "anthropic", "chatgpt", "claude ai",
     "gemini", "grok", "copilot",
     "large language model", "llm",
@@ -85,11 +91,14 @@ KEYWORDS = [
     "ai safety", "ai policy", "ai regulation", "ai law",
     "ai ethics", "ai governance", "ai legislation",
     "ai chip", "ai compute", "ai data center",
-    "ai lawsuit", "ai liability",
+    "ai lawsuit",
     "foundation model", "frontier model",
     "gpt-", "claude-", "gemini-",
-    "artificial intelligence",
+    "artificial intelligence", "generative ai",
 ]
+
+# Combined list used only for backward compatibility in scoring helpers
+KEYWORDS = STRONG_KEYWORDS + WEAK_KEYWORDS
 
 RSS_SOURCES = [
     # --- AI / Tech Beat ---
@@ -249,17 +258,25 @@ def parse_date(entry) -> datetime | None:
     return None
 
 
+def _kw_match(kw: str, lower: str) -> bool:
+    """Return True if kw appears in lower, using word-boundary for single tokens."""
+    if " " in kw or "-" in kw:
+        return kw in lower
+    return bool(re.search(r'\b' + re.escape(kw) + r'\b', lower))
+
+
 def matches_keywords(text: str) -> bool:
+    """Two-tier filter:
+    - A STRONG_KEYWORD match alone qualifies the story.
+    - A WEAK_KEYWORD match only qualifies if a STRONG_KEYWORD is also present.
+    This keeps generic AI brand news out unless it's tied to a real slop angle.
+    """
     lower = text.lower()
-    for kw in KEYWORDS:
-        # Use word-boundary match for short single-word terms to avoid substrings
-        if " " in kw or "-" in kw:
-            if kw in lower:
-                return True
-        else:
-            if re.search(r'\b' + re.escape(kw) + r'\b', lower):
-                return True
-    return False
+    has_strong = any(_kw_match(kw, lower) for kw in STRONG_KEYWORDS)
+    if has_strong:
+        return True
+    has_weak = any(_kw_match(kw, lower) for kw in WEAK_KEYWORDS)
+    return has_strong and has_weak  # weak alone = False
 
 # ---------------------------------------------------------------------------
 # Cross-day deduplication
