@@ -40,12 +40,14 @@ STRONG_KEYWORDS = [
     # Content quality / spam
     "content farm", "content mill", "made for advertising", "mfa site",
     "clickbait farm", "ai spam", "ai garbage", "low quality content",
-    "junk content", "fake content",
+    "junk content", "fake content", "ai content", "ai-content",
+    "llm-generated", "bot-generated", "ai text", "ai images", "ai image",
+    "ai video", "ai audio", "ai voice",
 
     # Automated journalism
     "automated journalism", "robo-journalism",
     "ai newsroom", "ai byline", "ai publisher", "news bot", "ai reporter",
-    "ai journalism", "ai-written",
+    "ai journalism", "ai-written", "ai writer", "ai writing",
 
     # Deepfakes and identity fraud
     "deepfake", "deep fake", "voice clone", "voice cloning",
@@ -162,7 +164,7 @@ HACKER_NEWS_SOURCE = {
 
 LOOKBACK_HOURS = 36
 MAX_STORIES = 25
-MIN_STORIES = 3
+MIN_STORIES = 1
 REQUEST_TIMEOUT = 15
 FETCH_DELAY = 0.3
 POSTS_DIR = Path("_posts")
@@ -275,8 +277,8 @@ def matches_keywords(text: str) -> bool:
     has_strong = any(_kw_match(kw, lower) for kw in STRONG_KEYWORDS)
     if has_strong:
         return True
-    has_weak = any(_kw_match(kw, lower) for kw in WEAK_KEYWORDS)
-    return has_strong and has_weak  # weak alone = False
+    # Weak keywords alone never qualify — only strong keywords matter.
+    return False
 
 # ---------------------------------------------------------------------------
 # Cross-day deduplication
