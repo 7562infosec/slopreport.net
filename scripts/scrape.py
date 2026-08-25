@@ -268,17 +268,12 @@ def _kw_match(kw: str, lower: str) -> bool:
 
 
 def matches_keywords(text: str) -> bool:
-    """Two-tier filter:
-    - A STRONG_KEYWORD match alone qualifies the story.
-    - A WEAK_KEYWORD match only qualifies if a STRONG_KEYWORD is also present.
-    This keeps generic AI brand news out unless it's tied to a real slop angle.
+    """Single-tier filter: any keyword (strong or weak) qualifies the story.
+    Scoring in score_story() penalises pure brand-mention stories so they rank
+    lower, but they can still appear on slow news days.
     """
     lower = text.lower()
-    has_strong = any(_kw_match(kw, lower) for kw in STRONG_KEYWORDS)
-    if has_strong:
-        return True
-    # Weak keywords alone never qualify — only strong keywords matter.
-    return False
+    return any(_kw_match(kw, lower) for kw in KEYWORDS)
 
 # ---------------------------------------------------------------------------
 # Cross-day deduplication
