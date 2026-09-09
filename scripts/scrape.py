@@ -25,7 +25,7 @@ from dateutil import parser as dateutil_parser
 # Configuration
 # ---------------------------------------------------------------------------
 
-# Tier 1: Strong signal — a match alone qualifies the story.
+# Tier 1: Strong signal â a match alone qualifies the story.
 # These terms indicate actual AI slop, synthetic content, deepfakes,
 # misinformation, or platform/policy responses to those problems.
 STRONG_KEYWORDS = [
@@ -81,7 +81,7 @@ STRONG_KEYWORDS = [
     "made for kids", "child safety",
 ]
 
-# Tier 2: Weak signal — brand names and general AI terms.
+# Tier 2: Weak signal â brand names and general AI terms.
 # A match here ONLY qualifies the story if a STRONG_KEYWORD is also present
 # in the same text. This prevents generic AI news ("How to use ChatGPT")
 # from flooding the post on slow news days.
@@ -169,7 +169,7 @@ REQUEST_TIMEOUT = 15
 FETCH_DELAY = 0.3
 POSTS_DIR = Path("_posts")
 SEEN_URLS_FILE = Path(__file__).parent / "seen_urls.json"
-SEEN_URLS_MAX_AGE_DAYS = 45
+SEEN_URLS_MAX_AGE_DAYS = 7
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -206,7 +206,7 @@ def sanitize_text(text: str) -> str:
 
 
 def fix_encoding(text: str) -> str:
-    """Fix UTF-8/Latin-1 double-encoding artifacts (e.g. Â· → ·)."""
+    """Fix UTF-8/Latin-1 double-encoding artifacts (e.g. ÃÂ· â Â·)."""
     try:
         return text.encode('latin-1').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
@@ -476,7 +476,7 @@ def score_story(story: dict) -> float:
     score += sum(3.0 for kw in general if kw in title)
     score += sum(1.0 for kw in general if kw in desc)
 
-    # Brand-name mentions alone are low value — they match the keyword filter
+    # Brand-name mentions alone are low value â they match the keyword filter
     # but should not push generic AI news above actual slop stories.
     # Only award brand points if a high-value or general slop term is also present.
     brand_terms = [
@@ -487,7 +487,7 @@ def score_story(story: dict) -> float:
     ]
     has_slop_signal = any(kw in title or kw in desc for kw in high_value + general)
     if not has_slop_signal:
-        # Pure brand mention with no slop angle — penalize so it doesn't crowd out real stories
+        # Pure brand mention with no slop angle â penalize so it doesn't crowd out real stories
         brand_hit = any(kw in title for kw in brand_terms)
         if brand_hit:
             score -= 3.0
@@ -530,7 +530,7 @@ def _post_description(stories: list[dict]) -> str:
     snippets = []
     for s in stories[:3]:
         t = s["title"].strip()
-        snippets.append(t[:55].rsplit(" ", 1)[0] + "…" if len(t) > 55 else t)
+        snippets.append(t[:55].rsplit(" ", 1)[0] + "â¦" if len(t) > 55 else t)
     return "Today: " + "; ".join(snippets)
 
 
@@ -543,7 +543,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or '#'})\n"
     block += f"*{source}*"
     if date_str:
-        block += f"  - · {date_str}"
+        block += f"  - Â· {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
@@ -681,7 +681,7 @@ def write_github_summary(total_raw: int, after_dedup: int, selected: list, publi
     lines.append(f"| Raw stories fetched | {total_raw} |")
     lines.append(f"| After deduplication | {after_dedup} |")
     lines.append(f"| Selected for post | {len(selected)} |")
-    pub_icon = "✅ Yes" if published else "❌ No — below threshold"
+    pub_icon = "â Yes" if published else "â No â below threshold"
     lines.append(f"| Post published | {pub_icon} |")
     if post_path:
         lines.append(f"| Post path | `{post_path}` |")
