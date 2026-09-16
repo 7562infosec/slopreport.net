@@ -14,6 +14,7 @@ on:
 permissions:
   contents: write # Required to commit and push the new post
   models: read    # Required for GitHub Models AI summaries
+  actions: write  # Required to trigger the Pages deploy workflow
 
 concurrency:
   group: slopreport-scrape
@@ -77,6 +78,15 @@ jobs:
           git add _posts/ scripts/seen_urls.json
           git commit -m "chore: add daily slop report $(date -u +%Y-%m-%d)"
           git push origin HEAD
+
+      - name: Trigger Pages deploy
+        # Pushes made with the default GITHUB_TOKEN don't trigger other
+        # workflows' `on: push` events, so pages.yml never runs on its own
+        # after this commit. Dispatch it explicitly instead.
+        if: steps.check_changes.outputs.no_new_post == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages.yml --ref main
 
       - name: Summary
         run: |
