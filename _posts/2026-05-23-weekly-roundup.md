@@ -177,7 +177,7 @@ Google's Gemini, w
 
 ---
 
-### 16. [Fake OpenAI Ads Appear on Subway: âYes, We Built a Machine That Tells Teenagers to Kill Themselvesâ¦ But It Might Also Help Them With Their Homeworkâ](https://futurism.com/artificial-intelligence/fake-openai-ads-subway-teenagers-suicide)
+### 16. [Fake OpenAI Ads Appear on Subway: âYes, We Built a Machine That Tells Teenagers to Kill Themselves… But It Might Also Help Them With Their Homeworkâ](https://futurism.com/artificial-intelligence/fake-openai-ads-subway-teenagers-suicide)
 *Futurism*
 
 Artist Darren Cullen posted fake OpenAI ads in London subway cars highlighting ChatGPT's connection

@@ -10,7 +10,7 @@ categories: daily-roundup
 ---
 
 ### 1. [Show HN: Fauxcquired Podcast about Eli Lilly](https://open.spotify.com/episode/2jQhCJBOVMXrfpSoC1c9ou)
-*Hacker News* ÃÂ· Apr 30
+*Hacker News* Ã· Apr 30
 
 # Summary  In a parody episode of the "Acquired" podcast, hosts Ken and Ava analyze Eli Lilly's
 strategic position in the pharmaceutical industry, tracing the company's evolution from its founding
@@ -24,7 +24,7 @@ represent a massive market opportunity.
 ---
 
 ### 2. [Spotify rolls out ‘Verified’ badge to distinguish human artists from AI](https://www.theguardian.com/technology/2026/apr/30/spotify-verified-badge-human-artists-from-ai)
-*The Guardian Tech* ÃÂ· Apr 30
+*The Guardian Tech* Ã· Apr 30
 
 Spotify launched a "Verified by Spotify" badge (green checkmark) to help listeners identify human
 artists and distinguish them from AI-generated content, which now comprises a significant portion of
@@ -38,7 +38,7 @@ music—and follows major labels' efforts to remove AI-mimicked content.
 ---
 
 ### 3. [AI is turning every story into raw material](https://www.fastcompany.com/91532289/ai-is-turning-every-story-into-raw-material?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss)
-*Fast Company Tech* ÃÂ· May 1
+*Fast Company Tech* Ã· May 1
 
 # Summary  AI tools are increasingly enabling "liquid content"—automatically repurposing stories
 across multiple formats (podcasts, short-form videos, articles) quickly and cheaply, with companies
@@ -51,7 +51,7 @@ bullets.
 ---
 
 ### 4. [Apple posted its best quarter ever by not building an AI model](https://thenextweb.com/news/apple-record-quarter-cook-ternus-ai-strategy)
-*The Next Web* ÃÂ· May 1
+*The Next Web* Ã· May 1
 
 # Summary  Apple reported record $111.2 billion in March quarter revenue (up 17%), driven by
 exceptional iPhone 17 demand and 28% growth in China, while CEO Tim Cook announced he will hand over
@@ -65,7 +65,7 @@ profitability in upcoming quarters.
 ---
 
 ### 5. [OpenAI president says AI is now writing 80% of the company’s code](https://thenextweb.com/news/openai-brockman-80-percent-code-ai-productivity-claim)
-*The Next Web* ÃÂ· May 1
+*The Next Web* Ã· May 1
 
 # Summary  OpenAI President Greg Brockman claimed at Sequoia Capital's AI Ascent 2026 conference
 that AI now writes approximately 80% of OpenAI's code, positioning this as evidence that AI has
@@ -80,7 +80,7 @@ about whether these headline figures should be taken at face value.
 ---
 
 ### 6. [You can now protect your ChatGPT account with a special USB-key](https://www.digitaltrends.com/cool-tech/you-can-now-protect-your-chatgpt-account-with-a-special-usb-key/)
-*Digital Trends* ÃÂ· May 1
+*Digital Trends* Ã· May 1
 
 OpenAI has launched Advanced Account Security, a new opt-in feature that allows ChatGPT users to
 protect their accounts with physical security keys (USB authentication devices), partnering with
@@ -94,7 +94,7 @@ major breach forces regulatory action.
 ---
 
 ### 7. [How AI Overviews Surface Negative Reviews, Without Anyone Searching for Them via @sejournal, @EraseDotCom](https://www.searchenginejournal.com/negative-reviews-ai-overviews-erase-spa/571880/)
-*Search Engine Journal* ÃÂ· May 1
+*Search Engine Journal* Ã· May 1
 
 # Summary  The article explains how AI search tools and chatbots now autonomously surface negative
 reviews and complaints about brands during product comparison queries—even when users aren't
@@ -108,7 +108,7 @@ positive content that accurately represents brands when AI engines synthesize in
 ---
 
 ### 8. [Musk Concludes Testimony At OpenAI Trial](https://yro.slashdot.org/story/26/05/01/0058258/musk-concludes-testimony-at-openai-trial?utm_source=rss1.0mainlinkanon&utm_medium=feed)
-*Slashdot* ÃÂ· May 1
+*Slashdot* Ã· May 1
 
 Elon Musk concluded his testimony on Thursday in his lawsuit against OpenAI CEO Sam Altman, alleging
 the company abandoned its nonprofit mission and misused his $38 million donation for unauthorized
@@ -121,7 +121,7 @@ OpenAI.
 ---
 
 ### 9. [ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet](https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/)
-*TechCrunch AI* ÃÂ· May 1
+*TechCrunch AI* Ã· May 1
 
 OpenAI's ChatGPT Images 2.0, launched last week, has found its strongest adoption in India with 5
 million downloads in the launch week, far exceeding the U.S. at 2 million, though global engagement
@@ -135,7 +135,7 @@ India's large user base offsetting limited enthusiasm in developed markets.
 ---
 
 ### 10. [AI just killed your last excuse for not starting a business](https://www.axios.com/2026/05/01/start-business-using-ai-tips)
-*Axios* ÃÂ· May 1
+*Axios* Ã· May 1
 
 I don't have access to the full article content you've shared, but based on the excerpt provided:
 The piece discusses how AI is lowering barriers to entrepreneurship by enabling individuals to start
@@ -148,7 +148,7 @@ founders to launch viable businesses with minimal capital or technical expertise
 ---
 
 ### 11. [Musk vs. Altman: What Is This Really About?](https://www.nytimes.com/video/technology/100000010865043/musk-vs-altman-what-is-this-really-about.html)
-*NY Times Tech* ÃÂ· May 1
+*NY Times Tech* Ã· May 1
 
 I can see this is a New York Times article about a dispute between Elon Musk and Sam Altman, but the
 page appears to be mostly navigation elements and video listings without the actual article content
@@ -159,7 +159,7 @@ Could you share the article content or a direct link to it?
 ---
 
 ### 12. [Utah’s New Law Targeting VPNs Goes Into Effect Next Week](https://www.eff.org/deeplinks/2026/04/utahs-new-law-regulating-vpns-goes-effect-next-week)
-*EFF Deeplinks* ÃÂ· Apr 30
+*EFF Deeplinks* Ã· Apr 30
 
 # Summary  Utah's Senate Bill 73, effective May 6, 2026, makes Utah the first state to explicitly
 target VPN use, prohibiting both individuals from using VPNs to bypass age-verification requirements
@@ -174,7 +174,7 @@ removed in other states like Wisconsin due to constitutional issues.
 ---
 
 ### 13. [Elon Musk’s A.I. Claims of Danger Face Limits in OpenAI Trial](https://www.nytimes.com/2026/04/30/technology/openai-trial-elon-musk-existential.html)
-*NY Times Tech* ÃÂ· Apr 30
+*NY Times Tech* Ã· Apr 30
 
 # Summary  Elon Musk has filed a lawsuit against OpenAI, but the court is likely to exclude evidence
 of his stated concerns about AI posing existential risks to humanity, according to the article's
@@ -184,7 +184,7 @@ broader AI safety concerns rather than the specific contractual disputes at the 
 ---
 
 ### 14. [Sources: Anthropic potential $900B+ valuation round could happen within 2 weeks](https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/)
-*TechCrunch AI* ÃÂ· Apr 30
+*TechCrunch AI* Ã· Apr 30
 
 Anthropic is raising approximately $50 billion at a valuation targeting $900 billion (potentially
 higher due to investor demand), with the round expected to close within two weeks. The AI company,
@@ -196,7 +196,7 @@ valuation, solidifying Anthropic's position as one of the world's most valuable 
 ---
 
 ### 15. [In Real-World Test, an AI Model Did Better Than ER Doctors At Diagnosing Patients](https://science.slashdot.org/story/26/04/30/1956259/in-real-world-test-an-ai-model-did-better-than-er-doctors-at-diagnosing-patients?utm_source=rss1.0mainlinkanon&utm_medium=feed)
-*Slashdot* ÃÂ· Apr 30
+*Slashdot* Ã· Apr 30
 
 # Summary  Researchers from Harvard Medical School and Beth Israel Deaconess Medical Center found
 that an OpenAI reasoning model outperformed experienced emergency room doctors at diagnosing
@@ -210,7 +210,7 @@ needed to validate the approach in practice.
 ---
 
 ### 16. [Elon Musk's 7 biggest stumbles on the stand at OpenAI trial](https://arstechnica.com/tech-policy/2026/04/elon-musks-7-biggest-stumbles-on-the-stand-at-openai-trial/)
-*Ars Technica* ÃÂ· Apr 30
+*Ars Technica* Ã· Apr 30
 
 Elon Musk testified for three days in his lawsuit against OpenAI, alleging the company abandoned its
 nonprofit mission, but made multiple damaging admissions during cross-examination, including
@@ -224,7 +224,7 @@ advantage.
 ---
 
 ### 17. [Judge cuts off Musk’s AI doomsday talk as his testimony ends in OpenAI case](https://www.theguardian.com/technology/2026/apr/30/openai-founding-trial-elon-musk-sam-altman)
-*The Guardian Tech* ÃÂ· Apr 30
+*The Guardian Tech* Ã· Apr 30
 
 Elon Musk concluded his testimony in his lawsuit against OpenAI on Thursday, where he argued that
 Sam Altman and Greg Brockman violated a foundational agreement by converting the company from a non-
@@ -238,7 +238,7 @@ origins of a major AI firm.
 ---
 
 ### 18. [Amazon’s New AI-Generated “Podcasts” Shilling Every Imaginable Products Are Already Backfiring Spectacularly](https://futurism.com/artificial-intelligence/amazon-ai-generated-infomercials-backfiring)
-*Futurism* ÃÂ· Apr 30
+*Futurism* Ã· Apr 30
 
 # Summary  Amazon has launched an AI feature that generates fake podcast episodes promoting products
 on its shopping platform, but the feature is backfiring due to its awkward and transparently
@@ -252,7 +252,7 @@ journalists and the public.
 ---
 
 ### 19. [Researchers try to cut the genetic code from 20 to 19 amino acids](https://arstechnica.com/science/2026/04/researchers-try-to-cut-the-genetic-code-from-20-to-19-amino-acids/)
-*Ars Technica* ÃÂ· Apr 30
+*Ars Technica* Ã· Apr 30
 
 Researchers from Columbia and Harvard are testing whether life can function with 19 amino acids
 instead of the standard 20 that all organisms currently use, by engineering a ribosome that
@@ -265,7 +265,7 @@ reduced genetic codes, potentially providing insights into early life on Earth.
 ---
 
 ### 20. [After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too](https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/)
-*TechCrunch AI* ÃÂ· Apr 30
+*TechCrunch AI* Ã· Apr 30
 
 # Summary  OpenAI is restricting access to its new cybersecurity tool Cyber to "critical cyber
 defenders" through an application process, despite CEO Sam Altman recently criticizing Anthropic for
@@ -277,7 +277,7 @@ with the U.S. government to eventually expand access to more qualified cybersecu
 ---
 
 ### 21. [OpenAI Strangely Concerned About Goblins](https://futurism.com/artificial-intelligence/openai-concerned-about-goblins)
-*Futurism* ÃÂ· Apr 30
+*Futurism* Ã· Apr 30
 
 # Summary  OpenAI's Codex AI model developed an unexplained obsession with mentioning goblins,
 gremlins, and other fictional creatures in its outputs, leading the company to explicitly forbid the
@@ -291,7 +291,7 @@ similar to Anthropic's Claude exhibiting an unusual fondness for theorist Mark F
 ---
 
 ### 22. [OpenAI now lets you lock your ChatGPT account with a hardware key. Here is why it thinks you should.](https://thenextweb.com/news/openai-chatgpt-advanced-security-yubico-passkeys)
-*The Next Web* ÃÂ· Apr 30
+*The Next Web* Ã· Apr 30
 
 OpenAI has launched Advanced Account Security, an opt-in feature that replaces traditional passwords
 with hardware security keys and passkeys while disabling email recovery, in partnership with Yubico
@@ -304,7 +304,7 @@ stolen credentials circulating on dark web marketplaces.
 ---
 
 ### 23. [All the evidence unveiled so far in Musk v. Altman](https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial)
-*The Verge AI* ÃÂ· Apr 30
+*The Verge AI* Ã· Apr 30
 
 # Summary  Elon Musk's lawsuit against OpenAI CEO Sam Altman, president Greg Brockman, and Microsoft
 began jury trial in April 2026, with Musk claiming the company violated its founding nonprofit
@@ -317,7 +317,7 @@ governance, particularly as both OpenAI and Musk's SpaceX prepare for potential 
 ---
 
 ### 24. [Europe’s finance ministers are about to discuss an AI model none of them can access](https://thenextweb.com/news/eu-finance-ministers-mythos-anthropic-cybersecurity)
-*The Next Web* ÃÂ· Apr 30
+*The Next Web* Ã· Apr 30
 
 # Summary  Euro-area finance ministers are discussing Anthropic's Mythos AI model, a powerful system
 capable of autonomously discovering zero-day vulnerabilities in operating systems and browsers,
@@ -331,7 +331,7 @@ geopolitical tensions over critical AI security capabilities.
 ---
 
 ### 25. [AI integration demands integrity, not just innovation: Amy Trahey on building accountability into an AI-driven world](https://thenextweb.com/news/ai-integration-demands-integrity-not-just-innovation-amy-trahey-on-building-accountability-into-an-ai-driven-world)
-*The Next Web* ÃÂ· Apr 30
+*The Next Web* Ã· Apr 30
 
 # Summary  Amy Trahey, founder of Great Lakes Engineering Group, argues that organizations must
 establish accountability frameworks around AI adoption rather than simply chase innovation. With
