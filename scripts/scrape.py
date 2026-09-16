@@ -206,7 +206,7 @@ def sanitize_text(text: str) -> str:
 
 
 def fix_encoding(text: str) -> str:
-    """Fix UTF-8/Latin-1 double-encoding artifacts (e.g. ÃÂ· â Â·)."""
+    """Fix UTF-8/Latin-1 double-encoding artifacts (e.g. Ã· â ·)."""
     try:
         return text.encode('latin-1').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
@@ -530,8 +530,8 @@ def _post_description(stories: list[dict]) -> str:
     snippets = []
     for s in stories[:3]:
         t = s["title"].strip()
-        snippets.append(t[:55].rsplit(" ", 1)[0] + "â¦" if len(t) > 55 else t)
-    return "Today: " + "; ".join(snippets)
+        snippets.append(t[:55].rsplit(" ", 1)[0] + "…" if len(t) > 55 else t)
+    return sanitize_text("Today: " + "; ".join(snippets))
 
 
 def format_story_block(idx: int, story: dict) -> str:
@@ -543,7 +543,7 @@ def format_story_block(idx: int, story: dict) -> str:
     block = f"### {idx}. [{sanitize_text(title)}]({sanitize_url(link) or '#'})\n"
     block += f"*{source}*"
     if date_str:
-        block += f"  - Â· {date_str}"
+        block += f"  - · {date_str}"
     block += "\n\n"
     if summary:
         wrapped = textwrap.fill(summary, width=100)
