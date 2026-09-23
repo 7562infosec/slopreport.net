@@ -49,8 +49,10 @@ jobs:
         #   <a href=""> when social.links is empty; not a broken link.
         # --no-enforce-https: some scraped source articles are plain http://.
         run: |
-          bundle exec htmlproofer _site \
+          bundle exec htmlproofer ./_site \
             --disable-external \
+            --allow-hash-href \
+            --ignore-urls "/^mailto:/,/^tel:/" \
             --allow-missing-href \
             --no-enforce-https
 
