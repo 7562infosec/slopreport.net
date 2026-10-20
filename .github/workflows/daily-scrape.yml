@@ -23,7 +23,7 @@ concurrency:
 jobs:
   scrape-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30 # includes waiting on the pages.yml build + deploy
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
@@ -79,14 +79,39 @@ jobs:
           git commit -m "chore: add daily slop report $(date -u +%Y-%m-%d)"
           git push origin HEAD
 
-      - name: Trigger Pages deploy
+      - name: Trigger and verify Pages deploy
         # Pushes made with the default GITHUB_TOKEN don't trigger other
         # workflows' `on: push` events, so pages.yml never runs on its own
-        # after this commit. Dispatch it explicitly instead.
+        # after this commit. Dispatch it explicitly, then watch it so a failed
+        # deploy fails this job (and fires the failure notification below).
         if: steps.check_changes.outputs.no_new_post == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run pages.yml --ref main
+        run: |
+          set -euo pipefail
+          DISPATCHED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          gh workflow run pages.yml --ref main
+
+          # GitHub needs a moment to register the dispatched run. Only accept
+          # a run created after our dispatch, so an older workflow_dispatch
+          # run can't be mistaken for this one.
+          RUN_ID=""
+          for i in $(seq 1 12); do
+            sleep 5
+            RUN_ID=$(gh run list --workflow=pages.yml --branch=main \
+              --event=workflow_dispatch --limit 5 \
+              --json databaseId,createdAt \
+              --jq "[.[] | select(.createdAt >= \"$DISPATCHED_AT\")] | last | .databaseId // empty")
+            [ -n "$RUN_ID" ] && break
+          done
+
+          if [ -z "$RUN_ID" ]; then
+            echo "::error::Could not find the dispatched pages.yml run"
+            exit 1
+          fi
+
+          echo "Watching pages.yml run $RUN_ID"
+          gh run watch "$RUN_ID" --exit-status --interval 15
 
       - name: Summary
         run: |
@@ -96,7 +121,7 @@ jobs:
           else
             echo "### New post published" >> "$GITHUB_STEP_SUMMARY"
             echo "A new daily report was committed and pushed to main." >> "$GITHUB_STEP_SUMMARY"
-            echo "GitHub Pages will deploy it automatically." >> "$GITHUB_STEP_SUMMARY"
+            echo "The GitHub Pages deploy completed successfully." >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Notify on failure
